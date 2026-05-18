@@ -4,7 +4,6 @@
 > **Khái niệm:** Hosting (hay Web Hosting) là dịch vụ cung cấp cơ sở hạ tầng và không gian lưu trữ trên các máy chủ (server), cho phép cá nhân hoặc tổ chức xuất bản website và các ứng dụng trực tuyến lên môi trường Internet.
 
 Về mặt kỹ thuật, khi đăng ký dịch vụ hosting, người dùng đang thuê một phần tài nguyên phần cứng như **dung lượng ổ cứng, băng thông, RAM, CPU...** trên một máy chủ vật lý để chứa toàn bộ mã nguồn, cơ sở dữ liệu và các file đa phương tiện của website.
-
 ---
 
 ## 1. Phân Biệt Cốt Lõi: Hosting và Tên Miền (Domain)
