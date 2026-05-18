@@ -33,7 +33,7 @@ VPS hoạt động dựa trên **công nghệ ảo hóa** (Hypervisor). Nhà cun
 | Tiêu chí | Shared Hosting | VPS (Virtual Private Server) | Dedicated Server |
 | :--- | :--- | :--- | :--- |
 | **Bản chất hạ tầng** | Chia sẻ chung mọi tài nguyên trên một server vật lý. | Thuê một máy chủ ảo với tài nguyên độc lập. | Thuê trọn gói toàn bộ một máy chủ vật lý riêng biệt. |
-| **Quyền quản trị** | Giới hạn, chỉ quản lý qua bảng điều khiển cấu hình sẵn. | Toàn quyền tối cao (Root/Administrator Access). | Toàn quyền kiểm soát hoàn toàn cả phần cứng lẫn phần mềm. |
+| **Quyền quản trị** | Giới hạn, chỉ quản lý qua bảng điều khiển cấu hình sẵn. | Toàn quyền (Root/Administrator Access). | Toàn quyền kiểm soát cả phần cứng lẫn phần mềm. |
 | **Hiệu năng & Độ ổn định**| Trung bình, dễ bị ảnh hưởng bởi các website khác chung host. | Cao, ổn định do tài nguyên được cấp phát riêng. | Tối đa, hiệu suất mạnh mẽ nhất. |
 | **Chi phí** | Thấp nhất, phù hợp với quy mô nhỏ. | Trung bình, phù hợp cho doanh nghiệp/web phát triển. | Rất đắt đỏ, phù hợp doanh nghiệp lớn, dự án nặng. |
 
