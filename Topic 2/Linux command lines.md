@@ -23,6 +23,41 @@ trong đó:
 -p: là port, ở đây là 80
 -c: là cách gửi, ở đây là gửi 3 gói tin
 
+# SSH
+- Kết nối bằng Mật khẩu:
+
+```bash
+ssh username@IP_Address
+```
+<img width="669" height="447" alt="image" src="https://github.com/user-attachments/assets/88c682a1-c3b5-4d9d-a938-3489bc035d01" />
+ssh ubuntu@localhost
+
+- Kết nối bằng key:
+- ```bash
+  ssh -i /path/to/private_key username@IP_Address
+  ```
+<img width="683" height="407" alt="image" src="https://github.com/user-attachments/assets/5e73f77c-06a2-445b-b4a7-256104bae0f8" />
+trong đó:
+-i (Identity file): là private key, dùng private key để xác nhận thay vì password
+/.ssh/id_rsa: là đường dẫn đến nơi chứa private key trên máy tính
+
+- Kết nối bằng Port Custom:
+```bash
+ssh -p custom_port username@IP_Address
+```
+<img width="683" height="407" alt="image" src="https://github.com/user-attachments/assets/d6d69a4f-5629-439a-b771-836c8d5263a2" />
+trong đó:
+-p: là port kết nối
+custom_port: vì ssh mặc định sử dụng port 22 nên khi đổi sang port 2222 thì 2222 được gọi là custom 
+
+# SCP
+- copy 1 file:
+<img width="733" height="96" alt="image" src="https://github.com/user-attachments/assets/149155c9-07bb-40c1-bf30-4ac3862d49fb" />
+
+- copy 1 folder:
+<img width="733" height="206" alt="image" src="https://github.com/user-attachments/assets/9a5abd44-4440-4055-b5e3-809646380db0" />
+
+
 # CAT
 <img width="676" height="119" alt="image" src="https://github.com/user-attachments/assets/3254291f-b512-4270-9541-032a02789a0f" />
 xem nội dung 1 file
@@ -56,3 +91,5 @@ in ra 3 dòng cuối của file
 ## SỰ KHÁC NHAU CỦA TAILF VÀ TAIL:
 TAILF: theo dõi file liên tục có thêm dòng mới không
 TAIL: xem cuối file
+
+
