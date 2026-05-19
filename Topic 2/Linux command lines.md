@@ -4,7 +4,7 @@
 - Giải thích:
 ping: sử dụng giao thức ICMP để gửi gói tin, chủ yếu để kiểm tra độ trễ và khả năng kết nối mạng cơ bản nhanh chóng
 -trong đó:
-ttl: là số bước nhảy (hop) qua các router
+ttl: là số hop tối đa gói tin được phép đi qua trước khi bị hủy
 time: là thời gian trễ (latency) từ lúc máy tính gửi gói tin đến lúc gói tin được phản hồi về
 
 # Hping3
@@ -14,14 +14,14 @@ time: là thời gian trễ (latency) từ lúc máy tính gửi gói tin đến
 hping3: là một công cụ phân tích và lắp ráp gói tin mạng TCP/IP thông qua command line
 
 hping3 được gửi theo cú pháp:
-hping 3 + loại gói tin + target + port + cách gửi
+hping3 + loại gói tin + target + port + cách gửi
 ví dụ:
-hping 3 -1 google.com -p 80 -c 3
+hping3 -1 google.com -p 80 -c 3
 trong đó:
 -1: là loại gói tin được gửi, ở đây là ICMP 
 -target: là ip hoặc domain, ở đây là google.com
 -p: là port, ở đây là 80
--c: là cách gửi, ở đây là gửi 3 gói tin
+-c: là số lượng gói tin, ở đây là gửi 3 gói tin
 
 # SSH
 - Kết nối bằng Mật khẩu:
@@ -173,8 +173,24 @@ bước 2:
 
 # DIG COMMAND:
 - Kiểm tra record A, MX, NS:
+<img width="710" height="444" alt="image" src="https://github.com/user-attachments/assets/963c8117-8f24-499c-af7e-981c1dde29fe" />
+*record A
+
+<img width="710" height="416" alt="image" src="https://github.com/user-attachments/assets/712f603f-93a4-40db-8179-878476011876" />
+*record MX
+
+<img width="710" height="409" alt="image" src="https://github.com/user-attachments/assets/43beb1ba-4af4-48db-924b-9810b97e72bf" />
+*record NS
 
 - Kiểm tra record A, MX, NS với custom DNS:
+<img width="710" height="440" alt="image" src="https://github.com/user-attachments/assets/f135d467-e9ff-4add-8e88-7a7937b1a492" />
+*record A với custom DNS
+
+<img width="710" height="440" alt="image" src="https://github.com/user-attachments/assets/aeffda89-0826-4f4c-acb8-c86e890c7134" />
+*record MX với custom DNS
+
+<img width="710" height="440" alt="image" src="https://github.com/user-attachments/assets/5cda5cf9-611f-4e58-90d0-512abf0fe33f" />
+*record NS với custom DNS
 
 # Tar/Zip/Unzip Command:
 - Nén/giải nén `tar.gz`:
@@ -216,8 +232,9 @@ bước 2:
 <img width="739" height="316" alt="image" src="https://github.com/user-attachments/assets/9dce91c4-00de-4781-986a-a2ac805e0924" />
 
 - Giải thích các thông số:
-load average: Tải trung bình của hệ thống trong 1, 5 và 15 phút vừa qua, trong hình là 0,55, 0,56, 0,58. Với con số 0,55, máy bạn đang tải rất nhẹ
-
+load average: Tải trung bình của hệ thống trong 1, 5 và 15 phút vừa qua, trong hình là 0,55, 0,56, 0,58. Với con số 0,55, máy đang tải rất nhẹ
+Tasks: 356 total... 1 zombie: Tổng cộng có 356 tiến trình
+%Cpu(s): 98,5 id: Chỉ số CPU đang rảnh
 
 # FREE COMMAND
 - Giải thích các thông số về RAM:
@@ -288,19 +305,61 @@ Available (6,5Gi): Là tổng lượng RAM thực sự có thể sử dụng cho
 
 # TRACEROUTE
 - Thực hiện và giải thích kết quả:
+  - Traceroute dùng để kiểm tra đường đi của gói tin qua các router tới đích. Mỗi dòng là một hop/router trung gian
+<img width="1285" height="465" alt="image" src="https://github.com/user-attachments/assets/4147148e-b239-4638-9bbc-94c8a821c509" />
+*trong đó:
+Hops: bước nhảy của gói tin khi đi qua một router hoặc thiết bị mạng trung gian
+IP/Hostname: Tên thiết bị hoặc địa chỉ IP của router tại chặng đó
+Thời gian (ms): Là thời gian phản hồi (Round Trip Time - RTT) cho số lần gửi gói tin kiểm tra
+Dấu sao *: Là gói tin đã gửi đi nhưng không nhận được phản hồi từ router
 
 # SYMBOLIC LINK, HARD LINK COMMAND
 - Định nghĩa Sym Link:
+Symbolic link là shortcut trỏ tới đường dẫn file khác
 
 - Định nghĩa Hard Link:
+Hard link là một tên khác của cùng inode/file dữ liệu
 
 - Ví dụ về Sym Link và Hard Link:
+*ví dụ về Sym link:
+<img width="680" height="37" alt="image" src="https://github.com/user-attachments/assets/d453bd44-922d-4bc5-b612-9d4210364eca" />
+<img width="680" height="37" alt="image" src="https://github.com/user-attachments/assets/7bbf9bb9-6fe6-4a38-9379-9428e417f279" />
+
+*ví dụ về Hard link:
+<img width="680" height="40" alt="image" src="https://github.com/user-attachments/assets/7e2c3e0c-5a40-4ecd-929a-29c2bde5d89a" />
+<img width="680" height="40" alt="image" src="https://github.com/user-attachments/assets/5c6eae59-6d7f-4934-9bf9-5b2a6ba7a8a8" />
 
 # MOUNT/UNMOUNT:
+*Mô phỏng ổ đĩa 5Gb
 - Thêm ổ cứng `sdb` ~ 5gb:
+<img width="829" height="22" alt="image" src="https://github.com/user-attachments/assets/851ed4c0-3169-46db-9c2e-60249b3b4f3b" />
 
 - Kiểm tra số lượng ổ cứng
+<img width="952" height="83" alt="image" src="https://github.com/user-attachments/assets/7c24ef76-6137-46d4-ade7-b8f50548dbd4" />
 
 - Mount vào `/mnt/test`
+<img width="952" height="83" alt="image" src="https://github.com/user-attachments/assets/cfcdc9de-795f-4fcd-9343-04d894ddbfd3" />
 
 - Umount `/mnt/test`
+<img width="952" height="83" alt="image" src="https://github.com/user-attachments/assets/68fce5ac-3a9c-4da1-bf8b-68ca9a2eb2e4" />
+
+---
+
+## 1. SSL
+
+* **SSL là gì?**
+  SSL (Secure Sockets Layer) là giao thức bảo mật mã hóa liên kết giữa máy chủ web (Web Server) và trình duyệt (Browser), đảm bảo dữ liệu truyền tải được an toàn và riêng tư.
+
+* **Có bao nhiêu cách xác thực SSL?**
+  Có 3 mức độ xác thực cấp phát chứng chỉ:
+  * **DV (Domain Validation):** Xác thực quyền sở hữu tên miền (nhanh nhất).
+  * **OV (Organization Validation):** Xác thực tổ chức, doanh nghiệp.
+  * **EV (Extended Validation):** Xác thực doanh nghiệp mở rộng (mức độ tin cậy và bảo mật cao nhất, hiển thị tên công ty).
+
+* **CSR file dùng để làm gì?**
+  CSR (Certificate Signing Request) là một tệp văn bản mã hóa chứa thông tin định danh của chủ sở hữu tên miền và Public Key. Tệp này được gửi đến Tổ chức cấp phát (CA) để họ dựa vào đó tạo ra chứng chỉ SSL (CRT) cho máy chủ.
+
+* **Gen file CSR và request SSL bằng OpenSSL:**
+  Lệnh tạo đồng thời Private Key và CSR cho domain `tech.training.vietnix.tech`:
+  ```bash
+  openssl req -new -newkey rsa:2048 -nodes -keyout tech.training.vietnix.tech.key -out tech.training.vietnix.tech.csr
