@@ -161,10 +161,15 @@ bước 2:
 # CUT
 - Lấy thứ tự thứ '<n>':
 <img width="735" height="49" alt="image" src="https://github.com/user-attachments/assets/848b9aa9-466e-4843-ad9f-ca1184c6f15b" />
+*lấy thứ tự thứ 3
 
 - Lấy từ ký tự `<n>` trở về sau:
+<img width="735" height="49" alt="image" src="https://github.com/user-attachments/assets/7b93ba65-494d-49af-aa83-17615fb67344" />
+*lấy từ thứ tự thứ 3 trở về sau
 
 - Lấy đến ký tự thứ `<n>`:
+<img width="735" height="49" alt="image" src="https://github.com/user-attachments/assets/8f3f2b91-4e26-41b9-a3b2-6b24f92b96ae" />
+*lấy tới thứ tự thứ 4
 
 # DIG COMMAND:
 - Kiểm tra record A, MX, NS:
@@ -173,30 +178,119 @@ bước 2:
 
 # Tar/Zip/Unzip Command:
 - Nén/giải nén `tar.gz`:
+<img width="735" height="136" alt="image" src="https://github.com/user-attachments/assets/585c9d80-3233-4768-b48f-6967d32584f6" />
+*nén tar.gz
+
+<img width="735" height="136" alt="image" src="https://github.com/user-attachments/assets/f815579b-0d31-4003-9185-d4f6416a90a7" />
+*giải nén tar.gz
 
 - Nén/giải nén `.zip`:
+<img width="735" height="136" alt="image" src="https://github.com/user-attachments/assets/f42b3674-23cd-44e5-b2ea-75b93c066482" />
+*nén zip
+
+<img width="735" height="189" alt="image" src="https://github.com/user-attachments/assets/64dd6e84-b008-47d7-9bfc-515a7b65a86d" />
+*giải nén zip
 
 # LS
 - Liệt kê file/thư mục:
+<img width="735" height="44" alt="image" src="https://github.com/user-attachments/assets/32b83fe1-7665-4ad0-a031-6532f1068413" />
 
 - Liệt kê file/thư mục và thuộc tính:
+<img width="735" height="85" alt="image" src="https://github.com/user-attachments/assets/c17f36de-e398-4fc3-8794-9a9c6933e616" />
 
-- Show file ẩn
+- Show file ẩn:
+<img width="735" height="131" alt="image" src="https://github.com/user-attachments/assets/92f96506-f7dc-4d14-aecc-6979a0343f1b" />
+
 
 # PS
-- Show tiến trình
+- Show tiến trình:
+<img width="735" height="131" alt="image" src="https://github.com/user-attachments/assets/1641ab45-be7c-4bc1-ad52-e2bece4d7ca7" />
 
-- Kill tiến trình
+- Kill tiến trình:
+<img width="735" height="117" alt="image" src="https://github.com/user-attachments/assets/4ecd66c5-8aa1-4df9-b764-b505a7196141" />
+<img width="735" height="31" alt="image" src="https://github.com/user-attachments/assets/aa59105a-64be-4288-9375-afb79beb87d6" />
 
-# Top Command
+
+# TOP COMMAND
 - Kiểm tra tài nguyên CPU
 
 - Giải thích các thông số
 
-# Free Command
+# FREE COMMAND
 - Giải thích các thông số về RAM:
+<img width="735" height="81" alt="image" src="https://github.com/user-attachments/assets/6b8484ac-b7e9-42c6-902e-27cb540d6f97" />
+trong đó:
+Total (11Gi): Là tổng dung lượng RAM vật lý của máy
+Used (4,1Gi): Dung lượng RAM đang được sử dụng
+Free (1,7Gi): Dung lượng RAM hoàn toàn trống
+Shared (45Mi): Dung lượng RAM được chia sẻ giữa các tiến trình
+Buff/cache (5,2Gi): Là bộ nhớ đệm, cache
+Available (6,5Gi): Là tổng lượng RAM thực sự có thể sử dụng cho các ứng dụng mới mà không cần phải dùng đến ổ cứng
 
-# Df Command
+# DF COMMAND
 - Xem dung lượng disk:
+<img width="735" height="169" alt="image" src="https://github.com/user-attachments/assets/4ecb2020-f919-479f-9098-233930934c7c" />
 
 - Phân vùng `/` là gì:
+  * Phân vùng `/` là điểm gốc, mọi file, thư mục, thiết bị phần cứng đều được gắn (mount) vào một vị trí bên dưới thư mục /.
+  * Trong hình phân vùng /dev/sda2 có nghĩa toàn bộ hệ điều hành, các phần mềm cài đặt, và dữ liệu cá nhân của đều đang được lưu trữ trên phân vùng này.
+
+# FIND
+- Tìm file đuôi `.log`:
+<img width="727" height="80" alt="image" src="https://github.com/user-attachments/assets/fbb0d376-0f51-49dc-99b5-f34b9fbe4bfb" />
+
+- Tìm folder tên `abc`:
+<img width="727" height="62" alt="image" src="https://github.com/user-attachments/assets/3f20a26c-5757-4e07-ae70-0bda96d313ad" />
+
+- Tìm file tên `abc`:
+<img width="727" height="78" alt="image" src="https://github.com/user-attachments/assets/e8ff5a7e-864e-44f0-b025-556ce0a3ef1e" />
+
+- Tìm file `abc` và đặt quyền read only:
+<img width="739" height="78" alt="image" src="https://github.com/user-attachments/assets/4eddee49-3a0d-4dbe-a9a2-f56dbec0cd89" />
+
+
+# CHMOD, CHOWN, CHATTR COMMAND
+- Phân quyền bằng số và chữ:
+<img width="739" height="78" alt="image" src="https://github.com/user-attachments/assets/773b53e5-4b96-43fa-954a-e1775428d1b1" />
+*phân quyền bằng số
+
+<img width="739" height="78" alt="image" src="https://github.com/user-attachments/assets/a9b3e79e-f682-4e43-af99-218e4f9a0f00" />
+*phân quyền bằng chữ
+
+- Đổi owner user/group:
+<img width="739" height="65" alt="image" src="https://github.com/user-attachments/assets/4a5119b3-fa8b-4e27-9742-f035072f585e" />
+
+
+- Set Immutable Attribute:
+
+# NETSTAT
+- Hiển thị các socket đang listen:
+
+- Không resolve hostname:
+
+- Không resolve portname:
+
+- Display process name/PID:
+
+- Chỉ hiển thị socket TCP:
+
+- Chỉ hiển thị socket UDP:
+
+# TRACEROUTE
+- Thực hiện và giải thích kết quả:
+
+# SYMBOLIC LINK, HARD LINK COMMAND
+- Định nghĩa Sym Link:
+
+- Định nghĩa Hard Link:
+
+- Ví dụ về Sym Link và Hard Link:
+
+# MOUNT/UNMOUNT:
+- Thêm ổ cứng `sdb` ~ 5gb:
+
+- Kiểm tra số lượng ổ cứng
+
+- Mount vào `/mnt/test`
+
+- Umount `/mnt/test`
