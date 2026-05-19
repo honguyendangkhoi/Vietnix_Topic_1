@@ -212,9 +212,12 @@ bước 2:
 
 
 # TOP COMMAND
-- Kiểm tra tài nguyên CPU
+- Kiểm tra tài nguyên CPU:
+<img width="739" height="316" alt="image" src="https://github.com/user-attachments/assets/9dce91c4-00de-4781-986a-a2ac805e0924" />
 
-- Giải thích các thông số
+- Giải thích các thông số:
+load average: Tải trung bình của hệ thống trong 1, 5 và 15 phút vừa qua, trong hình là 0,55, 0,56, 0,58. Với con số 0,55, máy bạn đang tải rất nhẹ
+
 
 # FREE COMMAND
 - Giải thích các thông số về RAM:
@@ -260,21 +263,28 @@ Available (6,5Gi): Là tổng lượng RAM thực sự có thể sử dụng cho
 - Đổi owner user/group:
 <img width="739" height="65" alt="image" src="https://github.com/user-attachments/assets/4a5119b3-fa8b-4e27-9742-f035072f585e" />
 
-
 - Set Immutable Attribute:
+<img width="619" height="181" alt="image" src="https://github.com/user-attachments/assets/bfcebbb2-e113-453b-b607-dd49e07ecb94" />
+
 
 # NETSTAT
 - Hiển thị các socket đang listen:
+<img width="742" height="366" alt="image" src="https://github.com/user-attachments/assets/2b5df280-298c-4e2d-b382-633c26fda21f" />
 
 - Không resolve hostname:
+<img width="749" height="420" alt="image" src="https://github.com/user-attachments/assets/1e8de6b0-13aa-4439-afb2-504f5d2aa8c0" />
 
 - Không resolve portname:
+<img width="749" height="420" alt="image" src="https://github.com/user-attachments/assets/37618f39-92a8-486b-a7e7-cf4ff4e1047d" />
 
 - Display process name/PID:
+<img width="749" height="420" alt="image" src="https://github.com/user-attachments/assets/6b3443e8-65f5-415d-b33d-2d2acd3c7ba7" />
 
 - Chỉ hiển thị socket TCP:
+<img width="749" height="188" alt="image" src="https://github.com/user-attachments/assets/d845e21c-524a-4084-a17b-1737570c7775" />
 
 - Chỉ hiển thị socket UDP:
+<img width="716" height="165" alt="image" src="https://github.com/user-attachments/assets/e3c48c53-e4cf-465c-a6eb-100668912428" />
 
 # TRACEROUTE
 - Thực hiện và giải thích kết quả:
