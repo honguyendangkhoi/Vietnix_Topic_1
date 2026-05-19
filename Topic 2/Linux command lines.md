@@ -426,21 +426,163 @@ ssh -p custom_port username@IP_Address
 
 ---
 
-## 1. SSL
+# SSL
 
-* **SSL là gì?**
-  SSL (Secure Sockets Layer) là giao thức bảo mật mã hóa liên kết giữa máy chủ web (Web Server) và trình duyệt (Browser), đảm bảo dữ liệu truyền tải được an toàn và riêng tư.
+## SSL là gì?
+SSL (Secure Sockets Layer) là giao thức mã hóa dữ liệu giữa client và server nhằm bảo mật dữ liệu khi truyền qua internet. Hiện nay chủ yếu dùng TLS nhưng mọi người vẫn quen gọi là SSL.
 
-* **Có bao nhiêu cách xác thực SSL?**
-  Có 3 mức độ xác thực cấp phát chứng chỉ:
-  * **DV (Domain Validation):** Xác thực quyền sở hữu tên miền (nhanh nhất).
-  * **OV (Organization Validation):** Xác thực tổ chức, doanh nghiệp.
-  * **EV (Extended Validation):** Xác thực doanh nghiệp mở rộng (mức độ tin cậy và bảo mật cao nhất, hiển thị tên công ty).
+## Có bao nhiêu cách xác thực SSL?
+- DV (Domain Validation): Xác thực quyền sở hữu domain.
+- OV (Organization Validation): Xác thực domain và thông tin tổ chức.
+- EV (Extended Validation): Xác thực mở rộng, mức độ tin cậy cao nhất.
 
-* **CSR file dùng để làm gì?**
-  CSR (Certificate Signing Request) là một tệp văn bản mã hóa chứa thông tin định danh của chủ sở hữu tên miền và Public Key. Tệp này được gửi đến Tổ chức cấp phát (CA) để họ dựa vào đó tạo ra chứng chỉ SSL (CRT) cho máy chủ.
+## CSR file dùng để làm gì?
+CSR (Certificate Signing Request) là file chứa thông tin domain và public key để gửi tới nhà cung cấp SSL nhằm request SSL certificate.
 
-* **Gen file CSR và request SSL bằng OpenSSL:**
-  Lệnh tạo đồng thời Private Key và CSR cho domain `tech.training.vietnix.tech`:
-  ```bash
-  openssl req -new -newkey rsa:2048 -nodes -keyout tech.training.vietnix.tech.key -out tech.training.vietnix.tech.csr
+## Gen file CSR và request SSL cho domain `tech.training.vietnix.tech` bằng OpenSSL
+
+### Tạo private key
+```bash
+openssl genrsa -out tech.training.vietnix.tech.key 2048
+```
+
+### Tạo CSR
+```bash
+openssl req -new -key tech.training.vietnix.tech.key -out tech.training.vietnix.tech.csr
+```
+
+### Điền Common Name
+```text
+tech.training.vietnix.tech
+```
+
+## Pem file là gì?
+PEM (Privacy Enhanced Mail) là định dạng file chứa certificate hoặc private key dưới dạng text Base64.
+
+Ví dụ:
+```text
+-----BEGIN CERTIFICATE-----
+-----END CERTIFICATE-----
+```
+
+## Private key SSL là gì?
+Private key là khóa bí mật dùng để giải mã dữ liệu SSL/TLS và xác thực server. File này phải được bảo mật tuyệt đối.
+
+## PFX file là gì?
+PFX (PKCS#12) là file chứa:
+- SSL certificate
+- Private key
+- Certificate chain
+
+Thường dùng trên Windows Server/IIS.
+
+## Cách chuyển từ CRT sang PFX
+```bash
+openssl pkcs12 -export \
+-out ssl.pfx \
+-inkey private.key \
+-in certificate.crt
+```
+
+---
+
+# DOMAIN
+
+## Domain là gì?
+Domain là tên định danh của website giúp người dùng truy cập thay vì phải nhớ địa chỉ IP.
+
+Ví dụ:
+```text
+google.com
+vietnix.vn
+```
+
+## Các trạng thái của domain
+- Active: Domain đang hoạt động.
+- Expired: Domain hết hạn.
+- Redemption: Domain chờ khôi phục.
+- Pending Delete: Chờ xóa khỏi hệ thống.
+- Locked: Domain bị khóa transfer/update.
+
+## Subdomain là gì?
+Subdomain là domain con của domain chính.
+
+Ví dụ:
+```text
+blog.google.com
+mail.google.com
+```
+
+## Virtual Hosts là gì?
+Virtual Host cho phép nhiều website chạy trên cùng một server/IP.
+
+Ví dụ:
+- tech1.com
+- tech2.com
+
+Đều chạy trên cùng một web server.
+
+---
+
+# MAIL SERVER
+
+## Tìm hiểu MX Record
+MX Record (Mail Exchange) dùng để xác định mail server nhận email cho domain.
+
+Ví dụ:
+```text
+example.com -> mail.example.com
+```
+
+## Tìm hiểu DKIM
+DKIM (DomainKeys Identified Mail) dùng chữ ký điện tử để xác thực email được gửi đúng từ domain.
+
+## Tìm hiểu SPF
+SPF (Sender Policy Framework) dùng để khai báo các mail server được phép gửi mail cho domain.
+
+Ví dụ:
+```text
+v=spf1 ip4:1.1.1.1 include:_spf.google.com ~all
+```
+
+## Tìm hiểu PTR
+PTR Record dùng để phân giải IP thành domain (Reverse DNS).
+
+Thường dùng để chống spam mail.
+
+---
+
+# DNS
+
+## DNS là gì?
+DNS (Domain Name System) là hệ thống phân giải domain thành địa chỉ IP.
+
+Ví dụ:
+```text
+google.com -> 142.250.xxx.xxx
+```
+
+## Các loại record DNS
+- A: Trỏ domain tới IPv4.
+- AAAA: Trỏ domain tới IPv6.
+- CNAME: Alias domain.
+- MX: Mail server.
+- NS: Name Server.
+- TXT: Chứa text information.
+- PTR: Reverse DNS.
+- CAA: Khai báo CA được phép cấp SSL.
+
+## Nguyên tắc làm việc của DNS
+1. User nhập domain.
+2. Trình duyệt gửi DNS query.
+3. DNS server trả về IP.
+4. Trình duyệt kết nối tới server bằng IP đó.
+
+## Cách phân giải địa chỉ DNS
+1. Kiểm tra cache trên máy local.
+2. Hỏi Recursive DNS Server.
+3. Recursive DNS hỏi Root DNS.
+4. Root DNS trả thông tin TLD Server.
+5. TLD trả Authoritative DNS Server.
+6. Authoritative DNS trả IP domain.
+7. Recursive DNS trả IP cho client.
