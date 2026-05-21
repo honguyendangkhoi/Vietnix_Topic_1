@@ -1,22 +1,52 @@
-# Từ mô hình LEMP tiếp tục xây dựng mô hình reverse proxy:
+# Xây Dựng Mô Hình Reverse Proxy Với Nginx Và Apache
 
-- Yêu cầu:
-Kết hợp giữa 2 webserver là **_nginx_** và **_apache_**
-Tìm hiểu vì sao nginx đứng trước apache
-Thao tác xây dựng 2 web với 2 domain trước đó sử dụng vhost:
-    + 1 Website chạy wordpress
-    + 1 Website chạy laravel
-    (chạy bằng 2 source code được cấp)
-SSL sử dụng cert SSL đã tạo
-Bất kỳ domain nào khác khi trỏ về IP VPS hoặc truy cập qua IP phải cần qua 1 default vhost.
-Chạy cả 2 website tại cả http và https:
-    + https -> https
-    + http -> http
+## Yêu Cầu
+
+Kết hợp giữa 2 webserver là **nginx** và **apache**.
+
+Xây dựng 2 website sử dụng Virtual Host:
+
+- 1 website chạy WordPress
+- 1 website chạy Laravel
+
+Sử dụng SSL đã tạo cho cả 2 domain.
+
+Bất kỳ domain khác hoặc truy cập trực tiếp bằng IP VPS đều phải đi qua default vhost.
+
+Hệ thống cần hỗ trợ:
+
+- HTTP → HTTP
+- HTTPS → HTTPS
 
 ---
 
-# Bước 1:
-- Cài đặt Apache
+# Vì Sao Nginx Đứng Trước Apache?
+
+Mô hình hoạt động:
+
+```text
+Client -> Nginx -> Apache -> PHP Application
+```
+
+Lý do sử dụng Nginx phía trước Apache:
+
+- Nginx xử lý concurrent connection tốt hơn
+- Nginx tối ưu cho reverse proxy và static file
+- Apache hỗ trợ `.htaccess` và rewrite mạnh
+- SSL xử lý tại Nginx giúp giảm tải backend
+- Apache chỉ chạy nội bộ qua port `8080`
+
+Kết quả:
+
+- Tăng hiệu năng
+- Dễ mở rộng
+- Dễ quản lý SSL
+- Giữ được khả năng tương thích của Apache
+
+---
+
+# Bước 1: Cài Đặt Apache
+
 <img width="461" height="76" alt="image" src="https://github.com/user-attachments/assets/b340b248-45dc-4515-a0e4-e122688a2a9b" />
 
 ```bash
@@ -24,37 +54,44 @@ apt install apache2 -y
 a2enmod proxy_fcgi setenvif rewrite
 a2enconf php8.1-fpm
 ```
-- Cấu hình port 8080:
+
+## Cấu Hình Apache Chạy Port 8080
 
 ```bash
 sed -i 's/Listen 80/Listen 8080/' /etc/apache2/ports.conf
 sed -i 's/<VirtualHost \*:80>/<VirtualHost *:8080>/' /etc/apache2/sites-available/000-default.conf
 ```
+
 ---
 
-# Bước 2:
-- Tạo Virtual Host trên Apache
+# Bước 2: Tạo Virtual Host Trên Apache
+
 ```bash
 cat > /etc/apache2/sites-available/all-vhosts.conf << 'EOF'
 ```
-## 1. DEFAULT VHOST (IP & phpMyAdmin)
+
+## 1. DEFAULT VHOST (IP Và phpMyAdmin)
 
 <img width="342" height="98" alt="image" src="https://github.com/user-attachments/assets/9c0005f9-e62c-4ef8-a9e3-5096a6f771c6" />
 
-```bash
+```apache
 <VirtualHost *:8080>
     ServerName localhost
     DocumentRoot /var/www/html
 </VirtualHost>
 ```
+
+---
+
 ## 2. WORDPRESS VHOST
 
 <img width="463" height="176" alt="image" src="https://github.com/user-attachments/assets/af2f0bbb-6c30-4846-b9a5-da4552c4a695" />
 
-```bash
+```apache
 <VirtualHost *:8080>
     ServerName wp.dangkhoi.vietnix.tech
     DocumentRoot /var/www/wp.dangkhoi.vietnix.tech
+
     <Directory /var/www/wp.dangkhoi.vietnix.tech>
         AllowOverride All
         Require all granted
@@ -62,14 +99,17 @@ cat > /etc/apache2/sites-available/all-vhosts.conf << 'EOF'
 </VirtualHost>
 ```
 
+---
+
 ## 3. LARAVEL VHOST
 
 <img width="574" height="110" alt="image" src="https://github.com/user-attachments/assets/bc87e9d7-6f6e-4b42-ba9a-239ef7d887f1" />
 
-```bash
+```apache
 <VirtualHost *:8080>
     ServerName laravel.dangkhoi.vietnix.tech
     DocumentRoot /var/www/laravel.dangkhoi.vietnix.tech/public
+
     <Directory /var/www/laravel.dangkhoi.vietnix.tech/public>
         AllowOverride All
         Require all granted
@@ -77,10 +117,10 @@ cat > /etc/apache2/sites-available/all-vhosts.conf << 'EOF'
 </VirtualHost>
 EOF
 ```
+
 ---
 
-# Bước 3:
-Kích hoạt cấu hình và Khởi động lại Apache:
+# Bước 3: Kích Hoạt Cấu Hình Apache
 
 <img width="473" height="74" alt="image" src="https://github.com/user-attachments/assets/dd8470fa-fd8c-425a-b1ba-14a9f64328a3" />
 
@@ -89,10 +129,12 @@ a2dissite 000-default.conf
 a2ensite all-vhosts.conf
 systemctl restart apache2
 ```
+
 ---
 
-# Bước 4: Cấu hình Nginx
-Dọn dẹp cấu hình Nginx cũ:
+# Bước 4: Cấu Hình Nginx Reverse Proxy
+
+## Dọn Dẹp Cấu Hình Cũ
 
 <img width="587" height="56" alt="image" src="https://github.com/user-attachments/assets/473cbccb-96c1-44fe-a06d-7366dd0dbdb2" />
 
@@ -102,7 +144,9 @@ rm -f /etc/nginx/sites-enabled/wp
 rm -f /etc/nginx/sites-enabled/laravel
 ```
 
-Tạo cấu hình Proxy cho Nginx:
+---
+
+## Tạo File Proxy Config
 
 <img width="712" height="23" alt="image" src="https://github.com/user-attachments/assets/173dc6d6-d24d-424b-92b9-4a415a2acce5" />
 
@@ -110,34 +154,43 @@ Tạo cấu hình Proxy cho Nginx:
 cat > /etc/nginx/sites-available/proxy.conf << 'EOF'
 ```
 
-## 1. DEFAULT VHOST (Bắt IP và Domain lạ)
+---
+
+## 1. DEFAULT VHOST
 
 <img width="625" height="205" alt="image" src="https://github.com/user-attachments/assets/beefa092-5e39-41e0-8aef-b4851eaa5d6d" />
 
-```bash
+```nginx
 server {
     listen 80 default_server;
     server_name _;
-    
+
     location / {
         proxy_pass http://127.0.0.1:8080;
+
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     }
 }
 ```
+
+---
 
 ## 2. WORDPRESS
 
+### HTTP
+
 <img width="625" height="205" alt="image" src="https://github.com/user-attachments/assets/7636a3f4-19cc-42ec-984d-d08688cd0576" />
 
-```bash
+```nginx
 server {
     listen 80;
     server_name wp.dangkhoi.vietnix.tech;
+
     location / {
         proxy_pass http://127.0.0.1:8080;
+
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -145,18 +198,22 @@ server {
     }
 }
 ```
+
+### HTTPS
 
 <img width="735" height="295" alt="image" src="https://github.com/user-attachments/assets/f73e0fe1-5d31-4506-9eca-833d0dffaffc" />
 
-```bash
+```nginx
 server {
     listen 443 ssl;
     server_name wp.dangkhoi.vietnix.tech;
+
     ssl_certificate /etc/letsencrypt/live/wp.dangkhoi.vietnix.tech/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/wp.dangkhoi.vietnix.tech/privkey.pem;
-    
+
     location / {
         proxy_pass http://127.0.0.1:8080;
+
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -164,17 +221,23 @@ server {
     }
 }
 ```
+
+---
 
 ## 3. LARAVEL
 
+### HTTP
+
 <img width="735" height="206" alt="image" src="https://github.com/user-attachments/assets/def8323a-399a-4515-a1b0-f8562b5d3b69" />
 
-```bash
+```nginx
 server {
     listen 80;
     server_name laravel.dangkhoi.vietnix.tech;
+
     location / {
         proxy_pass http://127.0.0.1:8080;
+
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -182,17 +245,22 @@ server {
     }
 }
 ```
+
+### HTTPS
+
 <img width="729" height="302" alt="image" src="https://github.com/user-attachments/assets/8a761cee-4468-4d0e-b0ed-841deb75c3e1" />
 
-```bash
+```nginx
 server {
     listen 443 ssl;
     server_name laravel.dangkhoi.vietnix.tech;
+
     ssl_certificate /etc/letsencrypt/live/laravel.dangkhoi.vietnix.tech/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/laravel.dangkhoi.vietnix.tech/privkey.pem;
 
     location / {
         proxy_pass http://127.0.0.1:8080;
+
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -202,18 +270,25 @@ server {
 EOF
 ```
 
-Kích hoạt và kiểm tra Nginx
+---
+
+## Kích Hoạt Và Kiểm Tra Nginx
 
 <img width="728" height="119" alt="image" src="https://github.com/user-attachments/assets/cbdfeeae-ab80-4cad-b0ff-0aef185c3dc2" />
 
 ```bash
 ln -s /etc/nginx/sites-available/proxy.conf /etc/nginx/sites-enabled/
+
 nginx -t
+
 systemctl restart nginx
 ```
 
-Kiểm tra kết quả:
-- Kiểm tra kết Apache đang chạy port 8080:
+---
+
+# Kiểm Tra Reverse Proxy
+
+## Kiểm Tra Apache Port 8080
 
 <img width="728" height="154" alt="image" src="https://github.com/user-attachments/assets/1a91acb2-0a26-49db-907e-68b5233d6c38" />
 
@@ -221,7 +296,9 @@ Kiểm tra kết quả:
 curl -I http://127.0.0.1:8080 -H "Host: wp.dangkhoi.vietnix.tech"
 ```
 
-- Kiểm tra WordPress:
+---
+
+## Kiểm Tra WordPress
 
 <img width="727" height="154" alt="image" src="https://github.com/user-attachments/assets/cf70c6d2-2add-4a5e-937e-a95227db551a" />
 
@@ -229,7 +306,9 @@ curl -I http://127.0.0.1:8080 -H "Host: wp.dangkhoi.vietnix.tech"
 curl -I https://wp.dangkhoi.vietnix.tech
 ```
 
-- Kiểm tra default vhost chặn IP lạ:
+---
+
+## Kiểm Tra Default Vhost
 
 <img width="727" height="211" alt="image" src="https://github.com/user-attachments/assets/ac6c4320-f188-49de-9c9b-dcc515a6daa1" />
 
@@ -237,26 +316,35 @@ curl -I https://wp.dangkhoi.vietnix.tech
 curl -I http://IP_VPS
 ```
 
-sử dụng 2 source code:
-## Bước 1: 
-- Upload 2 file .db lên database:
+---
+
+# Upload Source Code Và Database
+
+## Upload Database
 
 <img width="730" height="149" alt="image" src="https://github.com/user-attachments/assets/23755475-9a50-41bf-b497-a97bbb4d3820" />
 
-- Kiểm tra:
+---
+
+## Kiểm Tra Database
 
 <img width="734" height="220" alt="image" src="https://github.com/user-attachments/assets/993e5a9b-7182-4b65-bdbd-721eeadf9014" />
 
-- Upload 2 file source code:
+---
+
+## Upload Source Code
 
 <img width="727" height="152" alt="image" src="https://github.com/user-attachments/assets/7fb08c33-ffdf-4b70-8fe0-51eb31c846e7" />
 
 ```bash
 scp /home/ubuntu/Desktop/lavarel_source/laravel_source.zip root@14.225.204.109:/tmp/
+
 scp /home/ubuntu/Desktop/wordpress_source/source_wp.zip root@14.225.204.109:/tmp/
 ```
 
-- Kiểm tra:
+---
+
+## Kiểm Tra File Upload
 
 <img width="726" height="60" alt="image" src="https://github.com/user-attachments/assets/f3c4b11d-acde-49bb-b4db-ef28c1626597" />
 
@@ -264,32 +352,38 @@ scp /home/ubuntu/Desktop/wordpress_source/source_wp.zip root@14.225.204.109:/tmp
 ls -lh /tmp/*.zip
 ```
 
-## Bước 2:
-### Cấu hình WordPress:
+---
+
+# Cấu Hình WordPress
 
 <img width="727" height="93" alt="image" src="https://github.com/user-attachments/assets/5f1d4f68-002c-486b-8744-8a70233d6f7d" />
 
 ```bash
 cp /var/www/wp.dangkhoi.vietnix.tech/wp-config-sample.php \
    /var/www/wp.dangkhoi.vietnix.tech/wp-config.php
+
 nano /var/www/wp.dangkhoi.vietnix.tech/wp-config.php
 ```
 
-- Tìm và sửa các dòng:
+## Cấu Hình Database
 
 <img width="724" height="350" alt="image" src="https://github.com/user-attachments/assets/5cd7b5fa-ebd4-4491-9d10-af5ccc160363" />
+
 <img width="253" height="29" alt="image" src="https://github.com/user-attachments/assets/22efb098-e070-4037-9b6f-f379167c6d8d" />
 
-```bash
+```php
 define( 'DB_NAME',     'linhlt_wp_lodoz' );
 define( 'DB_USER',     'root' );
 define( 'DB_PASSWORD', '@FLs%K@LUaC^6F(.Wp)tRB' );
 define( 'DB_HOST',     'localhost' );
 define( 'DB_CHARSET',  'utf8mb4' );
+
 $table_prefix = 'Sa3QIZ_';
 ```
 
-- Cấp quyền WordPress:
+---
+
+## Cấp Quyền WordPress
 
 <img width="724" height="41" alt="image" src="https://github.com/user-attachments/assets/64e54c4e-007f-4f90-b438-4f0a62f8d012" />
 
@@ -297,20 +391,24 @@ $table_prefix = 'Sa3QIZ_';
 chown -R www-data:www-data /var/www/wp.dangkhoi.vietnix.tech
 ```
 
-### Cấu hình Lavarel:
+---
+
+# Cấu Hình Laravel
 
 <img width="726" height="93" alt="image" src="https://github.com/user-attachments/assets/190d4776-6170-4605-a357-cc4b59ca6b09" />
 
 ```bash
 cp /var/www/laravel.dangkhoi.vietnix.tech/.env.example \
    /var/www/laravel.dangkhoi.vietnix.tech/.env
+
 nano /var/www/laravel.dangkhoi.vietnix.tech/.env
 ```
-- Tìm và sửa các dòng:
+
+## Cấu Hình Database
 
 <img width="421" height="308" alt="image" src="https://github.com/user-attachments/assets/3ea392f5-8457-4f53-9b16-e3d21d5468be" />
 
-```bash
+```env
 APP_URL=
 
 DB_CONNECTION=mysql
@@ -321,8 +419,9 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-## Source:
-Sửa trong source Wordpress:
+---
+
+# Chỉnh Sửa Source WordPress
 
 <img width="726" height="43" alt="image" src="https://github.com/user-attachments/assets/26f654ef-b9a1-4bec-88b3-529202d52251" />
 
@@ -332,17 +431,17 @@ nano /var/www/wp.dangkhoi.vietnix.tech/wp-config.php
 
 <img width="726" height="334" alt="image" src="https://github.com/user-attachments/assets/324d9886-a9f2-4630-8d5e-3c09b4f0c38a" />
 
-```bash
+```php
 define( 'DB_USER',     'root' );
 define( 'DB_PASSWORD', '@FLs%K@LUaC^6F(.Wp)tRB' );
 define( 'DB_HOST',     'localhost' );
 ```
 
-Cấp quyền:
+---
 
-<img width="726" height="43" alt="image" src="https://github.com/user-attachments/assets/bdc45e4c-5e75-4dcd-9185-90c44ae65796" />
+# Kiểm Tra WordPress
 
-Kiểm tra:
+## HTTP
 
 <img width="729" height="187" alt="image" src="https://github.com/user-attachments/assets/7dc9d8d8-382c-4889-89c8-ac1cad063f1b" />
 
@@ -350,34 +449,50 @@ Kiểm tra:
 curl -I http://wp.dangkhoi.vietnix.tech/
 ```
 
+---
+
+## HTTPS
+
 <img width="729" height="226" alt="image" src="https://github.com/user-attachments/assets/0c761209-9472-4df9-93a6-f2eee55b1fda" />
 
 ```bash
 curl -I https://wp.dangkhoi.vietnix.tech/
 ```
-Kết quả:
-Giao diện wordpress:
+
+---
+
+# Kết Quả WordPress
+
 <img width="1271" height="927" alt="image" src="https://github.com/user-attachments/assets/193b0d60-e23d-419b-b72a-42d2730ec93d" />
 
-### BƯỚC NÀO ĐÓ:
+---
 
-chỉnh sửa file .env:
+# Cấu Hình Laravel HTTPS
+
+## Chỉnh Sửa File `.env`
 
 <img width="156" height="34" alt="image" src="https://github.com/user-attachments/assets/8f43e815-af57-4d1e-a408-62428d1e9e24" />
 
+---
 
-sửa hàm boot:
+## Sửa Hàm boot
 
 <img width="697" height="143" alt="image" src="https://github.com/user-attachments/assets/71822408-9dc2-4378-bef6-4a470f13cdfd" />
 
-clean cache và test:
+---
+
+## Clear Cache Và Test
 
 <img width="729" height="217" alt="image" src="https://github.com/user-attachments/assets/cfc54ef2-80c4-4165-ab5f-2eaef809fe2f" />
 
-tạo file .htaccess cho wordpress và lavarel:
+---
 
--wordpress:
+# Tạo File `.htaccess`
+
+## WordPress
+
 <img width="729" height="239" alt="image" src="https://github.com/user-attachments/assets/9ee7afb7-611b-41f0-b2dc-c292dc75335f" />
+
 ```bash
 cat > /var/www/wp.dangkhoi.vietnix.tech/.htaccess << 'EOF'
 # BEGIN WordPress
@@ -385,46 +500,62 @@ cat > /var/www/wp.dangkhoi.vietnix.tech/.htaccess << 'EOF'
 RewriteEngine On
 RewriteBase /
 RewriteRule ^index\.php$ - [L]
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+
 RewriteRule . /index.php [L]
 </IfModule>
 # END WordPress
 EOF
 ```
 
--lavarel:
+---
+
+## Laravel
+
 <img width="729" height="220" alt="image" src="https://github.com/user-attachments/assets/fede0fd8-4a49-4fb7-adb0-3ac297294b93" />
+
 ```bash
 cat > /var/www/laravel.dangkhoi.vietnix.tech/public/.htaccess << 'EOF'
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
     </IfModule>
+
     RewriteEngine On
+
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
+
     RewriteRule ^ index.php [L]
 </IfModule>
 EOF
 ```
 
-- cấp quyền và reload apache:
+---
+
+## Cấp Quyền Và Reload Apache
+
 <img width="729" height="62" alt="image" src="https://github.com/user-attachments/assets/e81f02f9-cd0d-479e-b613-59296b2b60c3" />
 
 ```bash
 chown www-data:www-data /var/www/wp.dangkhoi.vietnix.tech/.htaccess
+
 systemctl reload apache2
 ```
 
-kết quả:
+---
 
--lavarel:
+# Kết Quả Laravel
 
 <img width="1259" height="924" alt="image" src="https://github.com/user-attachments/assets/55d85b5a-1a38-4541-bd33-064fdbd8cd4f" />
 
-Kiểm tra lại toàn bộ:
-1. Kiểm tra Nginx + Apache đang chạy:
+---
+
+# Kiểm Tra Toàn Bộ Hệ Thống
+
+## 1. Kiểm Tra Nginx Và Apache
 
 <img width="716" height="98" alt="image" src="https://github.com/user-attachments/assets/38955209-1bd9-434b-9428-847342e41cb9" />
 
@@ -433,7 +564,9 @@ systemctl status nginx | grep "Active:"
 systemctl status apache2 | grep "Active:"
 ```
 
-2. Kiểm tra đúng port (Nginx 80/443, Apache 8080):
+---
+
+## 2. Kiểm Tra Port
 
 <img width="716" height="191" alt="image" src="https://github.com/user-attachments/assets/d467a638-8f77-4f00-acb6-f6af17ba06fa" />
 
@@ -441,7 +574,9 @@ systemctl status apache2 | grep "Active:"
 ss -tlnp | grep -E "80|443|8080"
 ```
 
-3. Kiểm tra PHP 8.1:
+---
+
+## 3. Kiểm Tra PHP 8.1
 
 <img width="716" height="101" alt="image" src="https://github.com/user-attachments/assets/9c180614-9d22-4728-914a-a3105d1433de" />
 
@@ -449,16 +584,22 @@ ss -tlnp | grep -E "80|443|8080"
 php -v
 ```
 
-4. Kiểm tra MySQL:
+---
+
+## 4. Kiểm Tra MySQL
 
 <img width="716" height="182" alt="image" src="https://github.com/user-attachments/assets/28227538-efb3-4fcd-87da-31cc1684a394" />
 
 ```bash
 systemctl status mysql | grep "Active:"
-mysql -u root -p'@FLs%K@LUaC^6F(.Wp)tRB' -e "SELECT VERSION();"
+
+mysql -u root -p'@FLs%K@LUaC^6F(.Wp)tRB' \
+-e "SELECT VERSION();"
 ```
 
-5. Kiểm tra phpMyAdmin:
+---
+
+## 5. Kiểm Tra phpMyAdmin
 
 <img width="725" height="164" alt="image" src="https://github.com/user-attachments/assets/ffa9fb70-9736-4136-b670-0ac29ee92d7a" />
 
@@ -466,7 +607,9 @@ mysql -u root -p'@FLs%K@LUaC^6F(.Wp)tRB' -e "SELECT VERSION();"
 curl -I http://14.225.204.109/phpmyadmin
 ```
 
-6. Kiểm tra WordPress HTTP→HTTP (không redirect sang HTTPS)
+---
+
+## 6. Kiểm Tra WordPress HTTP → HTTP
 
 <img width="730" height="226" alt="image" src="https://github.com/user-attachments/assets/88c28391-5745-4acf-8029-37a6411683c6" />
 
@@ -474,7 +617,9 @@ curl -I http://14.225.204.109/phpmyadmin
 curl -I http://wp.dangkhoi.vietnix.tech/ | grep -E "HTTP|Location"
 ```
 
-7. WordPress HTTPS→HTTPS
+---
+
+## 7. Kiểm Tra WordPress HTTPS → HTTPS
 
 <img width="730" height="115" alt="image" src="https://github.com/user-attachments/assets/7e6cfe1b-6c65-4d4f-8531-2315aa2124c1" />
 
@@ -482,7 +627,9 @@ curl -I http://wp.dangkhoi.vietnix.tech/ | grep -E "HTTP|Location"
 curl -I https://wp.dangkhoi.vietnix.tech/ | grep -E "HTTP|Location"
 ```
 
-8. Laravel HTTP→HTTP
+---
+
+## 8. Kiểm Tra Laravel HTTP → HTTP
 
 <img width="730" height="115" alt="image" src="https://github.com/user-attachments/assets/b9fd3f72-a965-409e-b89c-fe4fe8933138" />
 
@@ -490,7 +637,9 @@ curl -I https://wp.dangkhoi.vietnix.tech/ | grep -E "HTTP|Location"
 curl -I http://laravel.dangkhoi.vietnix.tech/ | grep -E "HTTP|Location"
 ```
 
-9. Laravel HTTPS→HTTPS
+---
+
+## 9. Kiểm Tra Laravel HTTPS → HTTPS
 
 <img width="730" height="115" alt="image" src="https://github.com/user-attachments/assets/7672ec40-7c91-46c7-9b27-9ec76b7a7814" />
 
@@ -498,25 +647,63 @@ curl -I http://laravel.dangkhoi.vietnix.tech/ | grep -E "HTTP|Location"
 curl -I https://laravel.dangkhoi.vietnix.tech/ | grep -E "HTTP|Location"
 ```
 
-10. Default vhost chặn IP lạ
+---
+
+## 10. Kiểm Tra Default Vhost
 
 <img width="730" height="116" alt="image" src="https://github.com/user-attachments/assets/2a760e9b-08f1-4782-be9b-ebb33c561d59" />
 
 ```bash
 curl -I http://14.225.204.109/
+
 curl -I https://14.225.204.109/ -k
 ```
 
-11. SSL cert
+---
+
+## 11. Kiểm Tra SSL WordPress
 
 <img width="730" height="116" alt="image" src="https://github.com/user-attachments/assets/c7547f59-7554-4c13-9751-860d881f4afd" />
 
 ```bash
-echo | openssl s_client -connect wp.dangkhoi.vietnix.tech:443 2>/dev/null | openssl x509 -noout -dates -subject
+echo | openssl s_client \
+-connect wp.dangkhoi.vietnix.tech:443 2>/dev/null \
+| openssl x509 -noout -dates -subject
 ```
+
+---
+
+## 12. Kiểm Tra SSL Laravel
 
 <img width="730" height="116" alt="image" src="https://github.com/user-attachments/assets/3c6a93b1-7303-4fef-8815-73991306fcef" />
 
 ```bash
-echo | openssl s_client -connect laravel.dangkhoi.vietnix.tech:443 2>/dev/null | openssl x509 -noout -dates -subject
+echo | openssl s_client \
+-connect laravel.dangkhoi.vietnix.tech:443 2>/dev/null \
+| openssl x509 -noout -dates -subject
 ```
+
+---
+
+# Kết Luận
+
+Hệ thống Reverse Proxy sử dụng:
+
+- Nginx
+- Apache
+- PHP 8.1
+- MySQL 8
+- WordPress
+- Laravel
+- SSL HTTPS
+
+đã được cấu hình thành công.
+
+Kết quả đạt được:
+
+- Chạy đồng thời WordPress và Laravel
+- Hỗ trợ HTTP và HTTPS
+- Reverse Proxy hoạt động ổn định
+- SSL hợp lệ
+- Default vhost xử lý domain/IP lạ
+- Apache backend được ẩn phía sau Nginx
