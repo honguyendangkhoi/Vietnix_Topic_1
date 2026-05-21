@@ -239,7 +239,7 @@ curl -I http://IP_VPS
 
 sử dụng 2 source code:
 ## Bước 1: 
-- Upload 2 file .db lên database
+- Upload 2 file .db lên database:
 
 <img width="730" height="149" alt="image" src="https://github.com/user-attachments/assets/23755475-9a50-41bf-b497-a97bbb4d3820" />
 
@@ -247,32 +247,117 @@ sử dụng 2 source code:
 
 <img width="734" height="220" alt="image" src="https://github.com/user-attachments/assets/993e5a9b-7182-4b65-bdbd-721eeadf9014" />
 
-## Bước 2:
-- Cấu hình WordPress:
+- Upload 2 file source code:
 
+<img width="727" height="152" alt="image" src="https://github.com/user-attachments/assets/7fb08c33-ffdf-4b70-8fe0-51eb31c846e7" />
+
+```bash
+scp /home/ubuntu/Desktop/lavarel_source/laravel_source.zip root@14.225.204.109:/tmp/
+scp /home/ubuntu/Desktop/wordpress_source/source_wp.zip root@14.225.204.109:/tmp/
+```
+
+- Kiểm tra:
+
+<img width="726" height="60" alt="image" src="https://github.com/user-attachments/assets/f3c4b11d-acde-49bb-b4db-ef28c1626597" />
+
+```bash
+ls -lh /tmp/*.zip
+```
+
+## Bước 2:
+### Cấu hình WordPress:
+
+<img width="727" height="93" alt="image" src="https://github.com/user-attachments/assets/5f1d4f68-002c-486b-8744-8a70233d6f7d" />
 
 ```bash
 cp /var/www/wp.dangkhoi.vietnix.tech/wp-config-sample.php \
    /var/www/wp.dangkhoi.vietnix.tech/wp-config.php
-
-nano /var/www/wp.dangkhoi.vietnix.tech/wp-config.php```
+nano /var/www/wp.dangkhoi.vietnix.tech/wp-config.php
+```
 
 - Tìm và sửa các dòng:
 
 <img width="724" height="350" alt="image" src="https://github.com/user-attachments/assets/5cd7b5fa-ebd4-4491-9d10-af5ccc160363" />
+<img width="253" height="29" alt="image" src="https://github.com/user-attachments/assets/22efb098-e070-4037-9b6f-f379167c6d8d" />
 
 ```bash
 define( 'DB_NAME',     'linhlt_wp_lodoz' );
 define( 'DB_USER',     'root' );
 define( 'DB_PASSWORD', '@FLs%K@LUaC^6F(.Wp)tRB' );
 define( 'DB_HOST',     'localhost' );
-define( 'DB_CHARSET',  'utf8mb4' );```
+define( 'DB_CHARSET',  'utf8mb4' );
+$table_prefix = 'Sa3QIZ_';
+```
 
 - Cấp quyền WordPress:
 
 <img width="724" height="41" alt="image" src="https://github.com/user-attachments/assets/64e54c4e-007f-4f90-b438-4f0a62f8d012" />
 
+```bash
+chown -R www-data:www-data /var/www/wp.dangkhoi.vietnix.tech
+```
+
+### Cấu hình Lavarel:
+
+<img width="726" height="93" alt="image" src="https://github.com/user-attachments/assets/190d4776-6170-4605-a357-cc4b59ca6b09" />
+
+```bash
+cp /var/www/laravel.dangkhoi.vietnix.tech/.env.example \
+   /var/www/laravel.dangkhoi.vietnix.tech/.env
+nano /var/www/laravel.dangkhoi.vietnix.tech/.env
+```
+- Tìm và sửa các dòng:
+
+<img width="421" height="308" alt="image" src="https://github.com/user-attachments/assets/3ea392f5-8457-4f53-9b16-e3d21d5468be" />
+
+```bash
+APP_URL=
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+## Source:
+Sửa trong source Wordpress:
+
+<img width="726" height="43" alt="image" src="https://github.com/user-attachments/assets/26f654ef-b9a1-4bec-88b3-529202d52251" />
+
+```bash
+nano /var/www/wp.dangkhoi.vietnix.tech/wp-config.php
+```
+
+<img width="726" height="334" alt="image" src="https://github.com/user-attachments/assets/324d9886-a9f2-4630-8d5e-3c09b4f0c38a" />
+
+```bash
+define( 'DB_USER',     'root' );
+define( 'DB_PASSWORD', '@FLs%K@LUaC^6F(.Wp)tRB' );
+define( 'DB_HOST',     'localhost' );
+```
+
+Cấp quyền:
+
+<img width="726" height="43" alt="image" src="https://github.com/user-attachments/assets/bdc45e4c-5e75-4dcd-9185-90c44ae65796" />
+
+Kiểm tra:
+
+<img width="726" height="154" alt="image" src="https://github.com/user-attachments/assets/9d96ee91-e4cb-4d3d-95f5-35a2f1da5555" />
+
+### BƯỚC NÀO ĐÓ:
+Giao diện wordpress:
+<img width="1271" height="927" alt="image" src="https://github.com/user-attachments/assets/193b0d60-e23d-419b-b72a-42d2730ec93d" />
 
 
+chỉnh sửa file .env:
+
+<img width="156" height="34" alt="image" src="https://github.com/user-attachments/assets/8f43e815-af57-4d1e-a408-62428d1e9e24" />
+
+
+sửa hàm boot:
+
+<img width="697" height="143" alt="image" src="https://github.com/user-attachments/assets/71822408-9dc2-4378-bef6-4a470f13cdfd" />
 
 
