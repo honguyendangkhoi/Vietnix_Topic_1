@@ -33,6 +33,9 @@ sed -i 's/<VirtualHost \*:80>/<VirtualHost *:8080>/' /etc/apache2/sites-availabl
 cat > /etc/apache2/sites-available/all-vhosts.conf << 'EOF'
 ```
 ## 1. DEFAULT VHOST (IP & phpMyAdmin)
+
+<img width="342" height="98" alt="image" src="https://github.com/user-attachments/assets/9c0005f9-e62c-4ef8-a9e3-5096a6f771c6" />
+
 ```bash
 <VirtualHost *:8080>
     ServerName localhost
@@ -40,6 +43,9 @@ cat > /etc/apache2/sites-available/all-vhosts.conf << 'EOF'
 </VirtualHost>
 ```
 ## 2. WORDPRESS VHOST
+
+<img width="463" height="176" alt="image" src="https://github.com/user-attachments/assets/af2f0bbb-6c30-4846-b9a5-da4552c4a695" />
+
 ```bash
 <VirtualHost *:8080>
     ServerName wp.dangkhoi.vietnix.tech
@@ -52,6 +58,9 @@ cat > /etc/apache2/sites-available/all-vhosts.conf << 'EOF'
 ```
 
 ## 3. LARAVEL VHOST
+
+<img width="574" height="110" alt="image" src="https://github.com/user-attachments/assets/bc87e9d7-6f6e-4b42-ba9a-239ef7d887f1" />
+
 ```bash
 <VirtualHost *:8080>
     ServerName laravel.dangkhoi.vietnix.tech
@@ -62,4 +71,15 @@ cat > /etc/apache2/sites-available/all-vhosts.conf << 'EOF'
     </Directory>
 </VirtualHost>
 EOF
+```
+
+# Bước 3:
+Kích hoạt cấu hình và Khởi động lại Apache:
+
+<img width="473" height="74" alt="image" src="https://github.com/user-attachments/assets/dd8470fa-fd8c-425a-b1ba-14a9f64328a3" />
+
+```bash
+a2dissite 000-default.conf
+a2ensite all-vhosts.conf
+systemctl restart apache2
 ```
