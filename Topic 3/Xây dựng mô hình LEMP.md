@@ -67,4 +67,54 @@ systemctl start mysql
 <img width="1266" height="888" alt="image" src="https://github.com/user-attachments/assets/fb76e47c-3525-465a-b74c-7af991c0ee2b" />
 
 # Bước 7:
-## Tạo tài khoản FTP
+
+## Tạo tài khoản FTP:
+- Cài đặt package:
+<img width="525" height="79" alt="image" src="https://github.com/user-attachments/assets/6433b37f-15a3-4293-8c62-ec0e81556087" />
+
+- cấu hình FTP:
+<img width="727" height="133" alt="image" src="https://github.com/user-attachments/assets/a3a7c8d9-ac6e-4c8f-888c-daa9116575bc" />
+
+- Tạo mật khẩu cho user FTP:
+<img width="727" height="319" alt="image" src="https://github.com/user-attachments/assets/18b62718-0c11-419e-bb42-d93912f60dd6" />
+
+- Phân quyền quản lý thư mục code cho tài khoản vừa tạo:
+<img width="727" height="42" alt="image" src="https://github.com/user-attachments/assets/c73805c5-8f16-4198-b1ac-a05e892c4d39" />
+
+# Bước 8:
+## WordPress:
+- Tải và thiết lập thư mục WordPress:
+<img width="586" height="151" alt="image" src="https://github.com/user-attachments/assets/c4eeeba4-efbc-4e46-a200-344e780f4552" />
+
+## Laravel:
+- Cài Composer và tạo project Laravel mặc định:
+<img width="730" height="161" alt="image" src="https://github.com/user-attachments/assets/ad95836f-c9ec-47eb-b067-bcb97c3917bc" />
+
+# Bước 9: 
+## Cấu hình Nginx và Cài SSL bằng Certbot:
+### Nginx:
+
+- Tạo file cấu hình Nginx cho WordPress:
+<img width="730" height="314" alt="image" src="https://github.com/user-attachments/assets/857cb20f-dc20-411e-8e0c-fc3e7c4c9d70" />
+
+- Tạo file cấu hình Nginx cho Laravel:
+<img width="734" height="328" alt="image" src="https://github.com/user-attachments/assets/493d4e7a-c1a5-444e-994b-dc911f049776" />
+
+- Kích hoạt 2 website và khởi động lại Nginx:
+<img width="734" height="133" alt="image" src="https://github.com/user-attachments/assets/7ca1efeb-c9d3-4ba4-a64e-10b731b6c312" />
+
+### Certbot:
+- Cài đặt công cụ Certbot:
+<img width="708" height="76" alt="image" src="https://github.com/user-attachments/assets/2e6a0463-b1fc-4237-8c54-a896601af73f" />
+
+- Cài đặt SSL cho WordPress:
+<img width="708" height="44" alt="image" src="https://github.com/user-attachments/assets/858932b4-6424-4ba4-8a50-cb3603afa287" />
+- Kết quả:
+<img width="1262" height="886" alt="image" src="https://github.com/user-attachments/assets/b1cf569b-dbd7-4975-964c-82b0f07932d7" />
+
+- Cài đặt SSL cho Lavarel:
+<img width="728" height="57" alt="image" src="https://github.com/user-attachments/assets/ff5a5e07-d59f-45d8-9c52-3b50c1eac8a9" />
+- Kết quả:
+<img width="1262" height="886" alt="image" src="https://github.com/user-attachments/assets/c0feb6c9-ead0-4d77-ad3b-034b15ad80f8" />
+
+
