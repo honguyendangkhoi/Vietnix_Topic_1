@@ -1,15 +1,15 @@
 # Từ mô hình LEMP tiếp tục xây dựng mô hình reverse proxy:
 
 - Yêu cầu:
---Kết hợp giữa 2 webserver là **_nginx_** và **_apache_**
---Tìm hiểu vì sao nginx đứng trước apache
---Thao tác xây dựng 2 web với 2 domain trước đó sử dụng vhost:
+Kết hợp giữa 2 webserver là **_nginx_** và **_apache_**
+Tìm hiểu vì sao nginx đứng trước apache
+Thao tác xây dựng 2 web với 2 domain trước đó sử dụng vhost:
     + 1 Website chạy wordpress
     + 1 Website chạy laravel
     (chạy bằng 2 source code được cấp)
---SSL sử dụng cert SSL đã tạo
---Bất kỳ domain nào khác khi trỏ về IP VPS hoặc truy cập qua IP phải cần qua 1 default vhost.
---Chạy cả 2 website tại cả http và https:
+SSL sử dụng cert SSL đã tạo
+Bất kỳ domain nào khác khi trỏ về IP VPS hoặc truy cập qua IP phải cần qua 1 default vhost.
+Chạy cả 2 website tại cả http và https:
     + https -> https
     + http -> http
 
@@ -18,12 +18,14 @@
 # Bước 1:
 - Cài đặt Apache
 <img width="461" height="76" alt="image" src="https://github.com/user-attachments/assets/b340b248-45dc-4515-a0e4-e122688a2a9b" />
+
 ```bash
 apt install apache2 -y
 a2enmod proxy_fcgi setenvif rewrite
 a2enconf php8.1-fpm
 ```
-- Cấu hình port 8080
+- Cấu hình port 8080:
+
 ```bash
 sed -i 's/Listen 80/Listen 8080/' /etc/apache2/ports.conf
 sed -i 's/<VirtualHost \*:80>/<VirtualHost *:8080>/' /etc/apache2/sites-available/000-default.conf
@@ -197,4 +199,80 @@ server {
         proxy_set_header X-Forwarded-Proto $scheme;
     }
 }
+EOF
 ```
+
+Kích hoạt và kiểm tra Nginx
+
+<img width="728" height="119" alt="image" src="https://github.com/user-attachments/assets/cbdfeeae-ab80-4cad-b0ff-0aef185c3dc2" />
+
+```bash
+ln -s /etc/nginx/sites-available/proxy.conf /etc/nginx/sites-enabled/
+nginx -t
+systemctl restart nginx
+```
+
+Kiểm tra kết quả:
+- Kiểm tra kết Apache đang chạy port 8080:
+
+<img width="728" height="154" alt="image" src="https://github.com/user-attachments/assets/1a91acb2-0a26-49db-907e-68b5233d6c38" />
+
+```bash
+curl -I http://127.0.0.1:8080 -H "Host: wp.dangkhoi.vietnix.tech"
+```
+
+- Kiểm tra WordPress:
+
+<img width="727" height="154" alt="image" src="https://github.com/user-attachments/assets/cf70c6d2-2add-4a5e-937e-a95227db551a" />
+
+```bash
+curl -I https://wp.dangkhoi.vietnix.tech
+```
+
+- Kiểm tra default vhost chặn IP lạ:
+
+<img width="727" height="211" alt="image" src="https://github.com/user-attachments/assets/ac6c4320-f188-49de-9c9b-dcc515a6daa1" />
+
+```bash
+curl -I http://IP_VPS
+```
+
+sử dụng 2 source code:
+## Bước 1: 
+- Upload 2 file .db lên database
+
+<img width="730" height="149" alt="image" src="https://github.com/user-attachments/assets/23755475-9a50-41bf-b497-a97bbb4d3820" />
+
+- Kiểm tra:
+
+<img width="734" height="220" alt="image" src="https://github.com/user-attachments/assets/993e5a9b-7182-4b65-bdbd-721eeadf9014" />
+
+## Bước 2:
+- Cấu hình WordPress:
+
+
+```bash
+cp /var/www/wp.dangkhoi.vietnix.tech/wp-config-sample.php \
+   /var/www/wp.dangkhoi.vietnix.tech/wp-config.php
+
+nano /var/www/wp.dangkhoi.vietnix.tech/wp-config.php```
+
+- Tìm và sửa các dòng:
+
+<img width="724" height="350" alt="image" src="https://github.com/user-attachments/assets/5cd7b5fa-ebd4-4491-9d10-af5ccc160363" />
+
+```bash
+define( 'DB_NAME',     'linhlt_wp_lodoz' );
+define( 'DB_USER',     'root' );
+define( 'DB_PASSWORD', '@FLs%K@LUaC^6F(.Wp)tRB' );
+define( 'DB_HOST',     'localhost' );
+define( 'DB_CHARSET',  'utf8mb4' );```
+
+- Cấp quyền WordPress:
+
+<img width="724" height="41" alt="image" src="https://github.com/user-attachments/assets/64e54c4e-007f-4f90-b438-4f0a62f8d012" />
+
+
+
+
+
