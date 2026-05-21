@@ -448,3 +448,75 @@ ss -tlnp | grep -E "80|443|8080"
 ```bash
 php -v
 ```
+
+4. Kiểm tra MySQL:
+
+<img width="716" height="182" alt="image" src="https://github.com/user-attachments/assets/28227538-efb3-4fcd-87da-31cc1684a394" />
+
+```bash
+systemctl status mysql | grep "Active:"
+mysql -u root -p'@FLs%K@LUaC^6F(.Wp)tRB' -e "SELECT VERSION();"
+```
+
+5. Kiểm tra phpMyAdmin:
+
+<img width="725" height="164" alt="image" src="https://github.com/user-attachments/assets/ffa9fb70-9736-4136-b670-0ac29ee92d7a" />
+
+```bash
+curl -I http://14.225.204.109/phpmyadmin
+```
+
+6. Kiểm tra WordPress HTTP→HTTP (không redirect sang HTTPS)
+
+<img width="730" height="226" alt="image" src="https://github.com/user-attachments/assets/88c28391-5745-4acf-8029-37a6411683c6" />
+
+```bash
+curl -I http://wp.dangkhoi.vietnix.tech/ | grep -E "HTTP|Location"
+```
+
+7. WordPress HTTPS→HTTPS
+
+<img width="730" height="115" alt="image" src="https://github.com/user-attachments/assets/7e6cfe1b-6c65-4d4f-8531-2315aa2124c1" />
+
+```bash
+curl -I https://wp.dangkhoi.vietnix.tech/ | grep -E "HTTP|Location"
+```
+
+8. Laravel HTTP→HTTP
+
+<img width="730" height="115" alt="image" src="https://github.com/user-attachments/assets/b9fd3f72-a965-409e-b89c-fe4fe8933138" />
+
+```bash
+curl -I http://laravel.dangkhoi.vietnix.tech/ | grep -E "HTTP|Location"
+```
+
+9. Laravel HTTPS→HTTPS
+
+<img width="730" height="115" alt="image" src="https://github.com/user-attachments/assets/7672ec40-7c91-46c7-9b27-9ec76b7a7814" />
+
+```bash
+curl -I https://laravel.dangkhoi.vietnix.tech/ | grep -E "HTTP|Location"
+```
+
+10. Default vhost chặn IP lạ
+
+<img width="730" height="116" alt="image" src="https://github.com/user-attachments/assets/2a760e9b-08f1-4782-be9b-ebb33c561d59" />
+
+```bash
+curl -I http://14.225.204.109/
+curl -I https://14.225.204.109/ -k
+```
+
+11. SSL cert
+
+<img width="730" height="116" alt="image" src="https://github.com/user-attachments/assets/c7547f59-7554-4c13-9751-860d881f4afd" />
+
+```bash
+echo | openssl s_client -connect wp.dangkhoi.vietnix.tech:443 2>/dev/null | openssl x509 -noout -dates -subject
+```
+
+<img width="730" height="116" alt="image" src="https://github.com/user-attachments/assets/3c6a93b1-7303-4fef-8815-73991306fcef" />
+
+```bash
+echo | openssl s_client -connect laravel.dangkhoi.vietnix.tech:443 2>/dev/null | openssl x509 -noout -dates -subject
+```
