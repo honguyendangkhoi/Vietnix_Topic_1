@@ -344,12 +344,22 @@ Cấp quyền:
 
 Kiểm tra:
 
-<img width="726" height="154" alt="image" src="https://github.com/user-attachments/assets/9d96ee91-e4cb-4d3d-95f5-35a2f1da5555" />
+<img width="729" height="187" alt="image" src="https://github.com/user-attachments/assets/7dc9d8d8-382c-4889-89c8-ac1cad063f1b" />
 
-### BƯỚC NÀO ĐÓ:
+```bash
+curl -I http://wp.dangkhoi.vietnix.tech/
+```
+
+<img width="729" height="226" alt="image" src="https://github.com/user-attachments/assets/0c761209-9472-4df9-93a6-f2eee55b1fda" />
+
+```bash
+curl -I https://wp.dangkhoi.vietnix.tech/
+```
+Kết quả:
 Giao diện wordpress:
 <img width="1271" height="927" alt="image" src="https://github.com/user-attachments/assets/193b0d60-e23d-419b-b72a-42d2730ec93d" />
 
+### BƯỚC NÀO ĐÓ:
 
 chỉnh sửa file .env:
 
@@ -360,4 +370,81 @@ sửa hàm boot:
 
 <img width="697" height="143" alt="image" src="https://github.com/user-attachments/assets/71822408-9dc2-4378-bef6-4a470f13cdfd" />
 
+clean cache và test:
 
+<img width="729" height="217" alt="image" src="https://github.com/user-attachments/assets/cfc54ef2-80c4-4165-ab5f-2eaef809fe2f" />
+
+tạo file .htaccess cho wordpress và lavarel:
+
+-wordpress:
+<img width="729" height="239" alt="image" src="https://github.com/user-attachments/assets/9ee7afb7-611b-41f0-b2dc-c292dc75335f" />
+```bash
+cat > /var/www/wp.dangkhoi.vietnix.tech/.htaccess << 'EOF'
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+# END WordPress
+EOF
+```
+
+-lavarel:
+<img width="729" height="220" alt="image" src="https://github.com/user-attachments/assets/fede0fd8-4a49-4fb7-adb0-3ac297294b93" />
+```bash
+cat > /var/www/laravel.dangkhoi.vietnix.tech/public/.htaccess << 'EOF'
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
+EOF
+```
+
+- cấp quyền và reload apache:
+<img width="729" height="62" alt="image" src="https://github.com/user-attachments/assets/e81f02f9-cd0d-479e-b613-59296b2b60c3" />
+
+```bash
+chown www-data:www-data /var/www/wp.dangkhoi.vietnix.tech/.htaccess
+systemctl reload apache2
+```
+
+kết quả:
+
+-lavarel:
+
+<img width="1259" height="924" alt="image" src="https://github.com/user-attachments/assets/55d85b5a-1a38-4541-bd33-064fdbd8cd4f" />
+
+Kiểm tra lại toàn bộ:
+1. Kiểm tra Nginx + Apache đang chạy:
+
+<img width="716" height="98" alt="image" src="https://github.com/user-attachments/assets/38955209-1bd9-434b-9428-847342e41cb9" />
+
+```bash
+systemctl status nginx | grep "Active:"
+systemctl status apache2 | grep "Active:"
+```
+
+2. Kiểm tra đúng port (Nginx 80/443, Apache 8080):
+
+<img width="716" height="191" alt="image" src="https://github.com/user-attachments/assets/d467a638-8f77-4f00-acb6-f6af17ba06fa" />
+
+```bash
+ss -tlnp | grep -E "80|443|8080"
+```
+
+3. Kiểm tra PHP 8.1:
+
+<img width="716" height="101" alt="image" src="https://github.com/user-attachments/assets/9c180614-9d22-4728-914a-a3105d1433de" />
+
+```bash
+php -v
+```
