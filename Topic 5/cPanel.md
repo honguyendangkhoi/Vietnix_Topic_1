@@ -131,3 +131,8 @@ tạo SSL từ các key trên:
 ```bash
 sudo nano /etc/hosts
 ```
+
+- thêm vào file:
+
+<img width="545" height="254" alt="image" src="https://github.com/user-attachments/assets/82e1e13c-ce6a-48f8-8c0d-0a81d937a0b7" />
+
