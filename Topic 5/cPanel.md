@@ -57,11 +57,20 @@ Sau khi tạo database, truy cập vào phpMyAdmin -> Chọn database mới tạ
 
 - kết quả sau khi import:
 
-<img width="1119" height="893" alt="image" src="https://github.com/user-attachments/assets/9404c557-a8d0-4661-9c32-d636cdf590a3" />
+<img width="1507" height="885" alt="image" src="https://github.com/user-attachments/assets/232e57d2-a464-46a7-a64d-281b55d94c59" />
 
 - chỉnh sửa thông tin database:
 
 <img width="297" height="137" alt="image" src="https://github.com/user-attachments/assets/92cdcaaf-54d2-4180-8c14-bcc1341f5988" />
+
+## Lavarel
+- Tạo Lavarel database:
+
+<img width="430" height="162" alt="image" src="https://github.com/user-attachments/assets/50291134-5b9a-4d2d-a3e9-ac60beee2f20" />
+<img width="865" height="132" alt="image" src="https://github.com/user-attachments/assets/358c8f5a-a5f0-427f-8d9d-349c764b33a0" />
+
+- Import file .sql của Lavarel:
+<img width="1125" height="884" alt="image" src="https://github.com/user-attachments/assets/d2008aef-bbdb-4aae-b394-4e5da502af18" />
 
 
 # Domains:
