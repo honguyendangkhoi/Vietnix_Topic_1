@@ -63,6 +63,9 @@ Sau khi tạo database, truy cập vào phpMyAdmin -> Chọn database mới tạ
 
 <img width="297" height="137" alt="image" src="https://github.com/user-attachments/assets/92cdcaaf-54d2-4180-8c14-bcc1341f5988" />
 
+- sau khi add user
+<img width="1015" height="138" alt="image" src="https://github.com/user-attachments/assets/72566090-3fbf-43a4-855d-fea98f134e92" />
+
 ## Lavarel
 - Tạo Lavarel database:
 
