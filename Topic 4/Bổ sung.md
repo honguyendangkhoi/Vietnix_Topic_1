@@ -42,6 +42,8 @@ trong đó:
 - access_log off — không ghi log cho static file
 - add_header Cache-Control "public, immutable" — báo browser và CDN file này không đổi, khi user vào lần 2 trở đi, CSS/JS/ảnh load từ cache máy — không tốn băng thông, không tốn request lên server
 
+---
+
 **WordPress:**
 
 <img width="725" height="168" alt="image" src="https://github.com/user-attachments/assets/b2f13c0a-318c-407e-8fc8-12f9aa56d5e3" />
