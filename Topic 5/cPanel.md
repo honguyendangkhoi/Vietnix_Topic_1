@@ -114,6 +114,20 @@ tạo SSL từ các key trên:
 
 <img width="1257" height="434" alt="image" src="https://github.com/user-attachments/assets/171c01e0-2da2-4502-8b86-e69fdf383d47" />
 
+- Quay về trang chủ kiểm tra:
+
+<img width="283" height="243" alt="image" src="https://github.com/user-attachments/assets/19b6acf5-71d6-45db-9d47-5f6b73270919" />
 
 
+# Trỏ IP về domain
+- về cPanel và lưu thông tin:
 
+<img width="295" height="629" alt="image" src="https://github.com/user-attachments/assets/a4af9e9e-8843-4d92-aabf-159755ee2067" />
+
+- trên Ubuntu local truy cập vào file hosts
+
+<img width="519" height="25" alt="image" src="https://github.com/user-attachments/assets/f3df6a18-cfea-496c-82e4-81f22a248f77" />
+
+```bash
+sudo nano /etc/hosts
+```
