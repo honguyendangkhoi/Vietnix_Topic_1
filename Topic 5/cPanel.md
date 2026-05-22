@@ -102,5 +102,18 @@ sudo cat /etc/letsencrypt/live/laravel.dangkhoi.vietnix.tech/chain.pem
 - truy cập SSL:
 <img width="1257" height="826" alt="image" src="https://github.com/user-attachments/assets/6dd0e8a9-37e7-46a9-98a4-b5e33d1d9f08" />
 
+## Wordpress:
+tạo SSL từ các key trên:
+
+<img width="1257" height="826" alt="image" src="https://github.com/user-attachments/assets/2c747697-5bc1-4af4-baa1-8f09d01ca418" />
+
+<img width="1257" height="269" alt="image" src="https://github.com/user-attachments/assets/ccd99736-84c6-45f7-a40c-d1b5c699a13a" />
+
+
+## lavarel
+
+<img width="1257" height="434" alt="image" src="https://github.com/user-attachments/assets/171c01e0-2da2-4502-8b86-e69fdf383d47" />
+
+
 
 
