@@ -126,7 +126,7 @@ tạo SSL từ các key trên:
 
 - trên Ubuntu local truy cập vào file hosts
 
-<img width="519" height="25" alt="image" src="https://github.com/user-attachments/assets/f3df6a18-cfea-496c-82e4-81f22a248f77" />
+<img width="729" height="19" alt="image" src="https://github.com/user-attachments/assets/aa9a0280-0bdd-48c2-8874-a31c1b97c926" />
 
 ```bash
 sudo nano /etc/hosts
