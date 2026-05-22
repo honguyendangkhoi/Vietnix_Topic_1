@@ -127,6 +127,10 @@ tạo SSL từ các key trên:
 
 <img width="295" height="629" alt="image" src="https://github.com/user-attachments/assets/a4af9e9e-8843-4d92-aabf-159755ee2067" />
 
+- Bật On cho wordpress:
+
+<img width="1202" height="63" alt="image" src="https://github.com/user-attachments/assets/013cd303-8445-44fd-89b7-016854e3592a" />
+
 - trên Ubuntu local truy cập vào file hosts
 
 <img width="729" height="19" alt="image" src="https://github.com/user-attachments/assets/aa9a0280-0bdd-48c2-8874-a31c1b97c926" />
