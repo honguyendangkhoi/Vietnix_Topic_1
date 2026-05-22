@@ -136,3 +136,12 @@ sudo nano /etc/hosts
 
 <img width="545" height="254" alt="image" src="https://github.com/user-attachments/assets/82e1e13c-ce6a-48f8-8c0d-0a81d937a0b7" />
 
+kiểm tra:
+dùng lệnh ping để kiểm tra
+
+<img width="731" height="220" alt="image" src="https://github.com/user-attachments/assets/19f073e2-8537-4f6c-bc98-f689ce28cba8" />
+
+```bash
+ping wp.dangkhoi.vietnix.tech
+```
+
