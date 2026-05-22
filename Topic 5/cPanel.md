@@ -141,7 +141,10 @@ dùng lệnh ping để kiểm tra
 
 <img width="731" height="220" alt="image" src="https://github.com/user-attachments/assets/19f073e2-8537-4f6c-bc98-f689ce28cba8" />
 
+<img width="742" height="332" alt="image" src="https://github.com/user-attachments/assets/3cf070f6-97c2-469e-9bfc-be139373b8d8" />
+
 ```bash
 ping wp.dangkhoi.vietnix.tech
+ping laravel.dangkhoi.vietnix.tech 
 ```
 
