@@ -31,6 +31,16 @@ Thêm vhost SSL vào `/etc/apache2/sites-enabled/all-vhosts.conf`:
 ---
 
 ## 2. Nginx tối ưu Static File
+**Ngnix tự xử lý static file không foward sang Apache:**
+
+<img width="667" height="116" alt="image" src="https://github.com/user-attachments/assets/0bd82d8e-e43d-4c64-b0c1-1cdfef57128d" />
+
+trong đó:
+- location ~* \.(css|js|jpg|...)$ — Nginx bắt tất cả request có đuôi file tĩnh. ~* nghĩa là không phân biệt hoa thường (.CSS hay .css đều khớp)
+- root /var/www/wp.dangkhoi.vietnix.tech — Nginx tự tìm file trong thư mục này và trả về, không forward sang Apache
+- expires 30d — báo cho browser cache file này 30 ngày, lần sau không cần request lại
+- access_log off — không ghi log cho static file
+- add_header Cache-Control "public, immutable" — báo browser và CDN file này không đổi, khi user vào lần 2 trở đi, CSS/JS/ảnh load từ cache máy — không tốn băng thông, không tốn request lên server
 
 **WordPress:**
 
