@@ -1,11 +1,10 @@
-
 Giao diện cPanel sau khi vừa đăng nhập:
 
 <img width="1127" height="921" alt="image" src="https://github.com/user-attachments/assets/e14c9648-adce-497a-a8fa-33830439414a" />
 
-# Upload source code:
+# Upload source code và database:
 
-File Managers:
+# File Managers:
 - Giao diện:
 
 <img width="1122" height="921" alt="image" src="https://github.com/user-attachments/assets/0cecd45b-2ba2-4633-9fff-b92a931925c7" />
@@ -35,8 +34,37 @@ File Managers:
 <img width="690" height="448" alt="image" src="https://github.com/user-attachments/assets/549a0430-a29d-4070-8205-93d87a5a3091" />
 <img width="805" height="772" alt="image" src="https://github.com/user-attachments/assets/c23e239b-ae85-4bc4-bf38-3ac894ea6a3c" />
 
+# Database:
+- Giao diện database:
+<img width="1122" height="445" alt="image" src="https://github.com/user-attachments/assets/5db436c5-7d7a-4f65-8765-424f2057124f" />
 
-Domains:
+# bước 1:
+<img width="926" height="484" alt="image" src="https://github.com/user-attachments/assets/4ce1d35b-d869-44b3-a2e9-22485f41702c" />
+
+# bước 2:
+<img width="1111" height="608" alt="image" src="https://github.com/user-attachments/assets/f5f969d7-427d-46e2-9945-554cef98341d" />
+
+# bước 3:
+<img width="1118" height="842" alt="image" src="https://github.com/user-attachments/assets/846b322a-c817-4115-8b2a-aaad12023fb8" />
+
+# bước 4:
+## wordpress
+<img width="1107" height="437" alt="image" src="https://github.com/user-attachments/assets/f9ba2645-6af6-4e72-9b7d-9d00099d63b2" />
+
+Sau khi tạo database, truy cập vào phpMyAdmin -> Chọn database mới tạo -> Tab Import -> Chọn file .sql.
+
+<img width="1119" height="893" alt="image" src="https://github.com/user-attachments/assets/ecc1b052-0207-42fe-896b-b977512c27ff" />
+
+- kết quả sau khi import:
+
+<img width="1119" height="893" alt="image" src="https://github.com/user-attachments/assets/9404c557-a8d0-4661-9c32-d636cdf590a3" />
+
+- chỉnh sửa thông tin database:
+
+<img width="297" height="137" alt="image" src="https://github.com/user-attachments/assets/92cdcaaf-54d2-4180-8c14-bcc1341f5988" />
+
+
+# Domains:
 - Giao diện:
 
 <img width="1127" height="921" alt="image" src="https://github.com/user-attachments/assets/68cf86c9-7056-480f-b46f-4bb67adbd716" />
