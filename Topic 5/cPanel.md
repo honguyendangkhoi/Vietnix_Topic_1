@@ -91,3 +91,16 @@ Sau khi tạo database, truy cập vào phpMyAdmin -> Chọn database mới tạ
 
 <img width="1375" height="243" alt="image" src="https://github.com/user-attachments/assets/fc740e49-1129-4d24-8b0e-4a2cb8d57d50" />
 
+
+# SSL:
+- dùng lệnh ```bash cat``` để lấy nội dung
+```bash
+sudo cat /etc/letsencrypt/live/laravel.dangkhoi.vietnix.tech/cert.pem
+sudo cat /etc/letsencrypt/live/laravel.dangkhoi.vietnix.tech/privkey.pem
+sudo cat /etc/letsencrypt/live/laravel.dangkhoi.vietnix.tech/chain.pem
+```
+- truy cập SSL:
+<img width="1257" height="826" alt="image" src="https://github.com/user-attachments/assets/6dd0e8a9-37e7-46a9-98a4-b5e33d1d9f08" />
+
+
+
