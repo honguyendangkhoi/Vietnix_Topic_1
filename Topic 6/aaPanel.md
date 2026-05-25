@@ -98,6 +98,17 @@ upload database:
 /www/server/php/82/bin/php artisan cache:clear
 ```
 
+- permission wordpress:
+
+<img width="864" height="113" alt="image" src="https://github.com/user-attachments/assets/819cfe7e-25b8-4bbb-9808-b9d042499165" />
+
+```bash
+chown -R www:www /www/wwwroot/wp.dangkhoi.vietnix.tech
+
+find /www/wwwroot/wp.dangkhoi.vietnix.tech -type d -exec chmod 755 {} \;
+find /www/wwwroot/wp.dangkhoi.vietnix.tech -type f -exec chmod 644 {} \;
+```
+
 Truy cập website Vietnix.vn:
 
 <img width="1832" height="876" alt="image" src="https://github.com/user-attachments/assets/879fa97f-f396-4672-90b6-4cacc5e66898" />
