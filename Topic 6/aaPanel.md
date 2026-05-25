@@ -1,4 +1,30 @@
-aaPanel
+aaPanel:
+aaPanel là một Bảng điều khiển quản trị máy chủ (Web Hosting Control Panel) miễn phí dành cho hệ điều hành Linux.
+3 ưu điểm cốt lõi của aaPanel:
+
+    Triển khai "1 chạm": Cài đặt toàn bộ bộ khung máy chủ LNMP/LAMP (Nginx, Apache, MySQL, PHP) cực nhanh chỉ với một nút bấm.
+
+    Quản lý đa nền tảng: Cho phép chạy song song nhiều website, nhiều phiên bản PHP, dễ dàng thiết lập môi trường cho cả WordPress và Laravel trên cùng một VPS.
+
+    Trực quan & Tối ưu: Tích hợp sẵn Quản lý tệp tin (File Manager), App Store phong phú, biểu đồ theo dõi CPU/RAM theo thời gian thực và đặc biệt là tốn rất ít tài nguyên phần cứng so với cPanel hay DirectAdmin.
+
+1. WP-Optimize (Caching cấp độ Ứng dụng - Application-Level)
+
+    Cơ chế hoạt động: Hoạt động dựa trên PHP. Sử dụng Output Buffering để biên dịch trang web thành các tệp HTML tĩnh và lưu trữ trên ổ cứng.
+
+    Luồng xử lý: Thông qua tập lệnh chuyển hướng (Rewrite Rules), Web Server sẽ trả trực tiếp tệp HTML tĩnh cho người dùng, bỏ qua tiến trình xử lý của PHP-FPM.
+
+    Điều kiện triển khai: Tương thích với mọi nền tảng Web Server tiêu chuẩn (Apache, Nginx, hoặc mô hình Proxy kết hợp). Nguyên nhân là do tiến trình caching được xử lý hoàn toàn ở tầng ứng dụng, không phụ thuộc vào hạ tầng máy chủ cấp dưới.
+
+2. LiteSpeed Cache (Caching cấp độ Máy chủ - Server-Level)
+
+    Cơ chế hoạt động: Engine caching được tích hợp trực tiếp vào nhân (kernel) của Web Server. Plugin trên WordPress chỉ đóng vai trò là giao diện API, gửi các chỉ thị điều khiển qua HTTP Headers để máy chủ tự động lưu hoặc xóa cache.
+
+    Luồng xử lý: Web Server tự kiểm tra và trả dữ liệu trong bộ nhớ đệm trước khi yêu cầu chạm đến tầng ứng dụng, triệt tiêu hoàn toàn thời gian khởi chạy môi trường PHP.
+
+    Điều kiện triển khai: Hoạt động độc quyền trên môi trường OpenLiteSpeed hoặc LiteSpeed Enterprise. Không hỗ trợ và mất hoàn toàn tính năng Page Cache nếu triển khai trên Nginx hoặc Apache do thiếu module tương thích (mod_litespeed).
+
+    
 
 Reset ssh-key:
 
