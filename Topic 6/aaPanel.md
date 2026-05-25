@@ -119,3 +119,30 @@ Tải toàn bộ file:
 
 <img width="694" height="223" alt="image" src="https://github.com/user-attachments/assets/7e4363a6-ed1e-4466-a851-188524b6cc8f" />
 
+- Truy cập WP-Admin:
+
+<img width="1852" height="1051" alt="image" src="https://github.com/user-attachments/assets/3a00d4eb-6840-4a77-9da5-9d635269a279" />
+
+- Giao diện plugins:
+
+<img width="1852" height="1051" alt="image" src="https://github.com/user-attachments/assets/b538dd5d-19fc-473b-977a-7106f63ea722" />
+
+- Tiến hành cài đặt từng plugins:
+
+  Rank Math SEO:
+<img width="1852" height="1051" alt="image" src="https://github.com/user-attachments/assets/6b2d7f9a-ae23-4d91-8742-84d5e85ca67e" />
+
+- Giao diện:
+<img width="1456" height="782" alt="image" src="https://github.com/user-attachments/assets/5bd256b6-5015-4688-9c56-d0ac9582a7f9" />
+
+  MyThemeShop:
+<img width="1852" height="1051" alt="image" src="https://github.com/user-attachments/assets/d653a0d3-4607-4af3-b04f-68e8c1336a45" />
+
+  Elementor:
+<img width="1852" height="1051" alt="image" src="https://github.com/user-attachments/assets/6ecb3c8c-d4de-4e9c-b1e0-f19d957c16e1" />
+
+  Divi:
+
+<img width="1448" height="645" alt="image" src="https://github.com/user-attachments/assets/ff043e44-16f2-4625-a5e4-64ff42e83417" />
+
+
