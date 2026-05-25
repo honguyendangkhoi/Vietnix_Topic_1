@@ -109,6 +109,16 @@ find /www/wwwroot/wp.dangkhoi.vietnix.tech -type d -exec chmod 755 {} \;
 find /www/wwwroot/wp.dangkhoi.vietnix.tech -type f -exec chmod 644 {} \;
 ```
 
+- Wordpress:
+
+
+- Laravel:
+
+<img width="1854" height="1005" alt="image" src="https://github.com/user-attachments/assets/1ead0ec4-65f7-4d9a-add1-35010b7d245e" />
+
+<img width="738" height="221" alt="image" src="https://github.com/user-attachments/assets/05c3867d-ba0d-46dc-ad59-e07f60df3e26" />
+
+
 Truy cập website Vietnix.vn:
 
 <img width="1832" height="876" alt="image" src="https://github.com/user-attachments/assets/879fa97f-f396-4672-90b6-4cacc5e66898" />
@@ -128,12 +138,15 @@ Tải toàn bộ file:
 <img width="1852" height="1051" alt="image" src="https://github.com/user-attachments/assets/b538dd5d-19fc-473b-977a-7106f63ea722" />
 
 - Giao diện sau khi cài đặt xong:
+- 
 <img width="1456" height="782" alt="image" src="https://github.com/user-attachments/assets/5bd256b6-5015-4688-9c56-d0ac9582a7f9" />
 
   MyThemeShop:
+  
 <img width="1854" height="1045" alt="image" src="https://github.com/user-attachments/assets/c0bbe989-aa18-4a28-b4a0-41f2dfd519f8" />
 
   Elementor:
+  
 <img width="1676" height="927" alt="image" src="https://github.com/user-attachments/assets/c842264b-c36a-42b4-9144-c558bcaf684f" />
 
   Divi:
