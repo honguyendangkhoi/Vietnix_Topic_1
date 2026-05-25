@@ -156,7 +156,13 @@ find /www/wwwroot/wp.dangkhoi.vietnix.tech -type f -exec chmod 644 {} \;
 /www/server/php/82/etc
 ```
 
-4. tắt binlog:
+3. Cài extension:
+- App Store -> PHP -> Settings -> Install Extensions
+
+<img width="841" height="738" alt="image" src="https://github.com/user-attachments/assets/1cdf34d4-a045-4a57-8790-777cca3f0a28" />
+ 
+
+5. Tắt binlog:
 - App Store -> MySQL -> Setting -> Binary Log
 <img width="1830" height="1007" alt="image" src="https://github.com/user-attachments/assets/55750607-f1ac-4160-8d23-52f10d116fa7" />
 
