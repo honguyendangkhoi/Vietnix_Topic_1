@@ -90,6 +90,13 @@ upload database:
 
 <img width="310" height="117" alt="image" src="https://github.com/user-attachments/assets/1263647c-32a5-4861-9702-e88ca60f2d71" />
 
+- clean cache của lavarel:
+
+<img width="908" height="95" alt="image" src="https://github.com/user-attachments/assets/44c0649b-de02-4b05-b010-3a028e9d3ddd" />
+```bash
+/www/server/php/82/bin/php artisan config:clear
+/www/server/php/82/bin/php artisan cache:clear
+```
 
 Truy cập website Vietnix.vn:
 
