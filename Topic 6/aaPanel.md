@@ -34,6 +34,28 @@ Tiến hành mở port (Nếu không truy cập được):
 
 <img width="412" height="88" alt="image" src="https://github.com/user-attachments/assets/3cbc1566-22cd-400e-85c5-0b0d063b529a" />
 
+Upload file:
+
+<img width="1843" height="1054" alt="image" src="https://github.com/user-attachments/assets/4d4cd862-f098-4676-9748-c1eed729a32b" />
+
+Sau khi upload thành công:
+
+<img width="1843" height="1054" alt="image" src="https://github.com/user-attachments/assets/5a443b4f-4114-4a71-b38f-8da3514d6302" />
+
+Để liên kết 2 domain:
+Trong aaPanel -> chọn Website -> cài đặt các package theo yêu cầu:
+
+- Nginx:
+
+<img width="838" height="483" alt="image" src="https://github.com/user-attachments/assets/33b45502-5798-41ab-8146-1330956dd3c9" />
+
+
+
+
+
+
+
+
 
 Truy cập website Vietnix.vn:
 
