@@ -42,6 +42,11 @@ Sau khi upload thành công:
 
 <img width="1843" height="1054" alt="image" src="https://github.com/user-attachments/assets/5a443b4f-4114-4a71-b38f-8da3514d6302" />
 
+Giải nén:
+
+<img width="759" height="604" alt="image" src="https://github.com/user-attachments/assets/d4f2cd10-f176-49a8-93d9-4501fb97d40b" />
+
+
 Để liên kết 2 domain:
 Trong aaPanel -> chọn Website -> cài đặt package theo yêu cầu:
 
@@ -62,8 +67,28 @@ link domains:
 
 <img width="1818" height="917" alt="image" src="https://github.com/user-attachments/assets/0040384d-d08e-4174-b049-4dd085804119" />
 
+- Tạo databases:
 
+<img width="1818" height="917" alt="image" src="https://github.com/user-attachments/assets/7bf18e76-2e45-4fc7-85cc-918f4fd51ec3" />
 
+upload database:
+- wordpress:
+
+<img width="901" height="345" alt="image" src="https://github.com/user-attachments/assets/5a99ab00-dffd-4f36-aeb1-7dcce73d7286" />
+
+- lavarel:
+
+<img width="901" height="345" alt="image" src="https://github.com/user-attachments/assets/4be301ac-2612-4565-8c0e-99c2c1f0812b" />
+
+- bật auto backup database:
+
+<img width="357" height="68" alt="image" src="https://github.com/user-attachments/assets/87bbc86d-8b29-4b69-93cc-64afb2c21aa0" />
+
+- chỉnh sửa file `wp-config.php` và file `.env` theo database vừa tạo:
+
+<img width="759" height="604" alt="image" src="https://github.com/user-attachments/assets/a267977a-f563-48d5-bbc9-3defc5412bd7" />
+
+<img width="310" height="117" alt="image" src="https://github.com/user-attachments/assets/1263647c-32a5-4861-9702-e88ca60f2d71" />
 
 
 Truy cập website Vietnix.vn:
