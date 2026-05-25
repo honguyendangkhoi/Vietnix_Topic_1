@@ -127,19 +127,14 @@ Tải toàn bộ file:
 
 <img width="1852" height="1051" alt="image" src="https://github.com/user-attachments/assets/b538dd5d-19fc-473b-977a-7106f63ea722" />
 
-- Tiến hành cài đặt từng plugins:
-
-  Rank Math SEO:
-<img width="1852" height="1051" alt="image" src="https://github.com/user-attachments/assets/6b2d7f9a-ae23-4d91-8742-84d5e85ca67e" />
-
-- Giao diện:
+- Giao diện sau khi cài đặt xong:
 <img width="1456" height="782" alt="image" src="https://github.com/user-attachments/assets/5bd256b6-5015-4688-9c56-d0ac9582a7f9" />
 
   MyThemeShop:
-<img width="1852" height="1051" alt="image" src="https://github.com/user-attachments/assets/d653a0d3-4607-4af3-b04f-68e8c1336a45" />
+<img width="1854" height="1045" alt="image" src="https://github.com/user-attachments/assets/c0bbe989-aa18-4a28-b4a0-41f2dfd519f8" />
 
   Elementor:
-<img width="1852" height="1051" alt="image" src="https://github.com/user-attachments/assets/6ecb3c8c-d4de-4e9c-b1e0-f19d957c16e1" />
+<img width="1676" height="927" alt="image" src="https://github.com/user-attachments/assets/c842264b-c36a-42b4-9144-c558bcaf684f" />
 
   Divi:
 
