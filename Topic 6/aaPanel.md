@@ -53,8 +53,14 @@ link domains:
 
 <img width="825" height="619" alt="image" src="https://github.com/user-attachments/assets/fdcf8f2d-75b2-48ea-8978-a765ff04ee25" />
 
+<img width="825" height="619" alt="image" src="https://github.com/user-attachments/assets/9ede34d0-05cb-423f-a48f-693bb2571e9f" />
 
+- sau khi xong:
+<img width="1611" height="276" alt="image" src="https://github.com/user-attachments/assets/5fb9dd7b-4653-4abf-b61b-810fdc3cf9a0" />
 
+- Cài đặt package cho database:
+
+<img width="1818" height="917" alt="image" src="https://github.com/user-attachments/assets/0040384d-d08e-4174-b049-4dd085804119" />
 
 
 
