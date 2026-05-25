@@ -306,5 +306,3 @@ Tải toàn bộ plugin tại: [https://portal.vietnix.vn/index.php?rp=/download
 > **Lưu ý:** Chuyển toggle Binary Log sang **OFF** trước, sau đó nhấn **Delete** để xóa toàn bộ file `mysql-bin.*` cũ đang chiếm dụng dung lượng.
 
 ---
-
-*Báo cáo được thực hiện trong khuôn khổ bài tập triển khai aaPanel tại Vietnix.*
