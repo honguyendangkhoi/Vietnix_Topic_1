@@ -160,6 +160,7 @@ Tải toàn bộ file:
 
 <img width="1845" height="1007" alt="image" src="https://github.com/user-attachments/assets/9f988d0f-5dc3-412b-bf06-df6703e21c85" />
 
+<img width="707" height="183" alt="image" src="https://github.com/user-attachments/assets/6aab0d3d-3177-4c5d-8550-a9f0ffe572b7" />
 
 - Bật cache bằng công cụ WP-Optimize:
 
