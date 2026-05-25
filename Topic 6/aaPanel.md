@@ -139,6 +139,31 @@ find /www/wwwroot/wp.dangkhoi.vietnix.tech -type d -exec chmod 755 {} \;
 find /www/wwwroot/wp.dangkhoi.vietnix.tech -type f -exec chmod 644 {} \;
 ```
 
+# các tính năng khác của aaPanel:
+1. nơi chứa file access_log:
+
+<img width="1830" height="1007" alt="image" src="https://github.com/user-attachments/assets/22ca9ed4-ce62-431b-879a-68f66ec70748" />
+
+```bash
+/www/wwwlogs/
+```
+
+2. nơi chứa file config php-fpm:
+
+<img width="1830" height="1007" alt="image" src="https://github.com/user-attachments/assets/14abb14a-dabf-4f8e-93ad-2ae39baaf0c5" />
+
+```bash
+/www/server/php/82/etc
+```
+
+4. tắt binlog:
+- App Store -> MySQL -> Setting -> Binary Log
+<img width="1830" height="1007" alt="image" src="https://github.com/user-attachments/assets/55750607-f1ac-4160-8d23-52f10d116fa7" />
+
+xóa bin log:
+<img width="535" height="378" alt="image" src="https://github.com/user-attachments/assets/7e6cf6d2-6f4a-4d7d-9b07-c599e912913f" />
+
+
 
 - Laravel:
 
