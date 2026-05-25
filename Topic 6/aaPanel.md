@@ -98,6 +98,10 @@ upload database:
 /www/server/php/82/bin/php artisan cache:clear
 ```
 
+- Chỉnh sửa đường dẫn file để trỏ đến Lavarel:
+
+<img width="871" height="736" alt="image" src="https://github.com/user-attachments/assets/8ba201b6-a7cb-4d4c-a23f-c6324dd0a723" />
+
 - permission wordpress:
 
 <img width="864" height="113" alt="image" src="https://github.com/user-attachments/assets/819cfe7e-25b8-4bbb-9808-b9d042499165" />
@@ -109,14 +113,13 @@ find /www/wwwroot/wp.dangkhoi.vietnix.tech -type d -exec chmod 755 {} \;
 find /www/wwwroot/wp.dangkhoi.vietnix.tech -type f -exec chmod 644 {} \;
 ```
 
-- Wordpress:
-
 
 - Laravel:
 
 <img width="1854" height="1005" alt="image" src="https://github.com/user-attachments/assets/1ead0ec4-65f7-4d9a-add1-35010b7d245e" />
 
 <img width="738" height="221" alt="image" src="https://github.com/user-attachments/assets/05c3867d-ba0d-46dc-ad59-e07f60df3e26" />
+
 
 
 Truy cập website Vietnix.vn:
@@ -153,4 +156,11 @@ Tải toàn bộ file:
 
 <img width="1448" height="645" alt="image" src="https://github.com/user-attachments/assets/ff043e44-16f2-4625-a5e4-64ff42e83417" />
 
+- Giao diện wordpress sử dụng Divi Themes:
 
+<img width="1845" height="1007" alt="image" src="https://github.com/user-attachments/assets/9f988d0f-5dc3-412b-bf06-df6703e21c85" />
+
+
+- Bật cache bằng công cụ WP-Optimize:
+
+<img width="1672" height="766" alt="image" src="https://github.com/user-attachments/assets/d7d65458-e161-4628-8ff8-2305184881ec" />
