@@ -147,7 +147,6 @@ find /www/wwwroot/wp.dangkhoi.vietnix.tech -type f -exec chmod 644 {} \;
 <img width="738" height="221" alt="image" src="https://github.com/user-attachments/assets/05c3867d-ba0d-46dc-ad59-e07f60df3e26" />
 
 
-
 Truy cập website Vietnix.vn:
 
 <img width="1832" height="876" alt="image" src="https://github.com/user-attachments/assets/879fa97f-f396-4672-90b6-4cacc5e66898" />
@@ -187,6 +186,22 @@ Tải toàn bộ file:
 <img width="1845" height="1007" alt="image" src="https://github.com/user-attachments/assets/9f988d0f-5dc3-412b-bf06-df6703e21c85" />
 
 <img width="707" height="183" alt="image" src="https://github.com/user-attachments/assets/6aab0d3d-3177-4c5d-8550-a9f0ffe572b7" />
+
+# Cách sử dụng plugin All in One:
+- Giao diện:
+
+<img width="1272" height="431" alt="image" src="https://github.com/user-attachments/assets/93572097-46e5-4c84-a5c9-526f8b287d77" />
+
+- Thử tính năng xuất trang web sang file:
+
+<img width="1345" height="807" alt="image" src="https://github.com/user-attachments/assets/ecff1a2a-f431-481f-9b6b-ef30f413991b" />
+<img width="1345" height="807" alt="image" src="https://github.com/user-attachments/assets/309c42f1-a6de-4868-8d22-a8ec0f460eea" />
+
+- Các tính năng khác yêu cầu plugin bản pro:
+
+<img width="1830" height="1007" alt="image" src="https://github.com/user-attachments/assets/9fcfd94a-48e0-441a-85de-635113ac08e9" />
+
+
 
 - Bật cache bằng công cụ WP-Optimize:
 
