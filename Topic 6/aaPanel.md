@@ -43,12 +43,15 @@ Sau khi upload thành công:
 <img width="1843" height="1054" alt="image" src="https://github.com/user-attachments/assets/5a443b4f-4114-4a71-b38f-8da3514d6302" />
 
 Để liên kết 2 domain:
-Trong aaPanel -> chọn Website -> cài đặt các package theo yêu cầu:
+Trong aaPanel -> chọn Website -> cài đặt package theo yêu cầu:
 
 - Nginx:
 
 <img width="838" height="483" alt="image" src="https://github.com/user-attachments/assets/33b45502-5798-41ab-8146-1330956dd3c9" />
 
+link domains:
+
+<img width="825" height="619" alt="image" src="https://github.com/user-attachments/assets/fdcf8f2d-75b2-48ea-8978-a765ff04ee25" />
 
 
 
