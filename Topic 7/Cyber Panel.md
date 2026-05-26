@@ -108,4 +108,18 @@ vhssl  {
 <img width="492" height="395" alt="image" src="https://github.com/user-attachments/assets/3becae3f-7464-4a99-806a-7eed8fc092a6" />
 
 
+- Upload source code Lavarel:
 
+<img width="1172" height="897" alt="image" src="https://github.com/user-attachments/assets/a9eab30e-8cc3-4507-80e4-27c0021169f5" />
+
+- Kết quả sau khi upload và giải nén:
+
+<img width="1172" height="897" alt="image" src="https://github.com/user-attachments/assets/a3fb63c2-5933-40a3-ad06-25b1973d2a61" />
+
+- Xóa file `index.html`
+
+<img width="1172" height="897" alt="image" src="https://github.com/user-attachments/assets/cc34f1d1-296d-43b8-a36b-0f11fdadeaf8" />
+
+- Sửa đường dẫn `docRoot` để trỏ đến đúng thư mục `/public`
+
+<img width="720" height="481" alt="image" src="https://github.com/user-attachments/assets/5df26cd4-9184-4613-bea2-790b1151a678" />
