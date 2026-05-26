@@ -291,7 +291,13 @@ nano /usr/local/lsws/conf/vhosts/laravel.dangkhoi.vietnix.tech/vhost.conf
 
 Kết quả truy cập ứng dụng Python:
 
+### Laravel
+
 <img width="1843" height="1006" alt="image" src="https://github.com/user-attachments/assets/2c29c287-e94b-4154-82cc-6af8ce2bd279" />
+
+### Wordpress
+
+<img width="711" height="397" alt="image" src="https://github.com/user-attachments/assets/3d49eb96-0640-406f-b4b7-93c9bbf30dbe" />
 
 ---
 
