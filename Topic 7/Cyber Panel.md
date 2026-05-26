@@ -123,3 +123,38 @@ vhssl  {
 - Sửa đường dẫn `docRoot` để trỏ đến đúng thư mục `/public`
 
 <img width="720" height="481" alt="image" src="https://github.com/user-attachments/assets/5df26cd4-9184-4613-bea2-790b1151a678" />
+
+# Tạo database:
+## Laravel:
+
+`Database` -> `Create Database` -> `Chọn website` -> `Nhập thông tin`
+
+<img width="884" height="883" alt="image" src="https://github.com/user-attachments/assets/a1b5687f-6ef0-47b0-96c2-71dc03d4f6d9" />
+
+- Kiểm tra danh sách:
+
+<img width="1504" height="867" alt="image" src="https://github.com/user-attachments/assets/926163bd-4094-4a63-a1c7-9ed4503bfea7" />
+
+- upload file .sql lên phpMyAdmin
+
+<img width="1492" height="949" alt="image" src="https://github.com/user-attachments/assets/94914b08-1a52-4610-83d1-6b71b43385a8" />
+
+- chỉnh sửa file .env
+
+<img width="673" height="949" alt="image" src="https://github.com/user-attachments/assets/dbfda1f6-347e-4380-a2d0-bbc5a13758ed" />
+
+- Kết nối web thành công:
+
+<img width="1855" height="949" alt="image" src="https://github.com/user-attachments/assets/f9442a67-7637-4fe6-a061-c26ec4d4a197" />
+
+<img width="723" height="189" alt="image" src="https://github.com/user-attachments/assets/39f1d974-2137-4eef-bf8f-0161af9a2064" />
+
+
+## Wordpress:
+
+<img width="1185" height="927" alt="image" src="https://github.com/user-attachments/assets/85b81a66-4076-48ad-b7ac-643554186739" />
+
+- Kiểm tra danh sách:
+
+<img width="1504" height="867" alt="image" src="https://github.com/user-attachments/assets/2b32dcb3-23ea-4cc5-9ea3-a26e579b9515" />
+
