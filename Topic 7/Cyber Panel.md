@@ -265,10 +265,6 @@ Kiểm tra ứng dụng đang lắng nghe đúng port:
 
 <img width="728" height="99" alt="image" src="https://github.com/user-attachments/assets/c15893bf-7fec-4f20-847c-475075108fac" />
 
-Kết quả truy cập ứng dụng Python:
-
-<img width="1843" height="1006" alt="image" src="https://github.com/user-attachments/assets/2c29c287-e94b-4154-82cc-6af8ce2bd279" />
-
 ---
 
 ## 9. Cấu hình ProxyPass trong OpenLiteSpeed
@@ -292,6 +288,10 @@ nano /usr/local/lsws/conf/vhosts/laravel.dangkhoi.vietnix.tech/vhost.conf
 ```
 
 <img width="381" height="284" alt="image" src="https://github.com/user-attachments/assets/09bad1cd-b512-46cc-9a23-a75b2e28d29f" />
+
+Kết quả truy cập ứng dụng Python:
+
+<img width="1843" height="1006" alt="image" src="https://github.com/user-attachments/assets/2c29c287-e94b-4154-82cc-6af8ce2bd279" />
 
 ---
 
