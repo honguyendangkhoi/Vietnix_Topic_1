@@ -320,3 +320,10 @@ lsof -i :5000
 ```bash
 cat /root/app.log
 ```
+### 4. Kiểm ProxyPass:
+
+<img width="732" height="73" alt="image" src="https://github.com/user-attachments/assets/57cfc87e-7af5-4ecf-b52a-9fb1133fa3b1" />
+
+```bash
+curl https://laravel.dangkhoi.vietnix.tech/api/
+```
