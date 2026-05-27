@@ -11,10 +11,14 @@ tải VestaCP:
 
 <img width="650" height="113" alt="image" src="https://github.com/user-attachments/assets/a93c1117-5e29-4b78-9e6b-87e110e3501b" />
 
-`
+```
 Would you like to continue [y/n]: y
+
 Please enter admin email address: dngkhoyy@gmail.com
-Please enter Vesta port number (press enter for 8083): 
-Please enter FQDN hostname [training-dangkhoi.vietnix.vn]: 
+
+Please enter Vesta port number (press enter for 8083):
+
+Please enter FQDN hostname [training-dangkhoi.vietnix.vn]:
+
 Installation backup directory: /root/vst_install_backups/1779860859
-`
+```
