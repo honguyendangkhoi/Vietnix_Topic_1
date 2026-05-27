@@ -22,3 +22,7 @@ Please enter FQDN hostname [training-dangkhoi.vietnix.vn]:
 
 Installation backup directory: /root/vst_install_backups/1779860859
 ```
+
+- Kết quả sau khi tải xong:
+
+<img width="674" height="629" alt="image" src="https://github.com/user-attachments/assets/34023176-d548-41f5-a08b-d7798649f460" />
