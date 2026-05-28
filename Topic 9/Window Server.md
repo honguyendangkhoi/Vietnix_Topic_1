@@ -24,6 +24,8 @@ Giao diện sau khi kết nối
 
 <img width="1847" height="1031" alt="image" src="https://github.com/user-attachments/assets/899ac198-940f-491c-83f8-91451b658f56" />
 
+---
+
 ## Port Firewall:
 
 Nhấn `Window` -> tìm `wf.msc` -> `enter`
@@ -33,6 +35,8 @@ Nhấn `Window` -> tìm `wf.msc` -> `enter`
 Giao diện
 
 <img width="1027" height="774" alt="image" src="https://github.com/user-attachments/assets/b1f3b057-96ea-42ce-9c3d-5eb46c7af9fd" />
+
+---
 
 ### Allow port:
 
@@ -52,6 +56,8 @@ Chọn cả 3 `Domain`, `Private`, `Public` -> `Next`
 
 <img width="705" height="569" alt="image" src="https://github.com/user-attachments/assets/4de80b13-d559-48d2-8a0c-8e3c54d7c7a1" />
 
+---
+
 ### Block port:
 
 Chọn `New rules` bên phải -> `Port` nhập port bất kỳ -> `Next`
@@ -69,6 +75,12 @@ Chọn cả 3 `Domain`, `Private`, `Public` -> `Next`
 Đặt tên bất kỳ -> `Finish`
 
 <img width="712" height="548" alt="image" src="https://github.com/user-attachments/assets/6f1cdfd1-c67a-4c4a-ba20-271a1b3c0b57" />
+
+---
+
+## IP
+
+---
 
 ### Allow IP:
 
@@ -106,6 +118,12 @@ Chọn cả 3 `Domain`, `Private`, `Public` -> `Next`
 
 <img width="698" height="557" alt="image" src="https://github.com/user-attachments/assets/a4b3c261-d116-48ce-8493-79b26ff5ed3e" />
 
+---
+
+### Block IP
+
+
+---
 
 ## SQL
 
