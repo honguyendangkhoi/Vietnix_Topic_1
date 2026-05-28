@@ -275,8 +275,28 @@ Tiến hàng cài đặt .NET Framework 4.7.2 trước
 
 <img width="499" height="461" alt="image" src="https://github.com/user-attachments/assets/1f043ede-5c29-4a67-a9a7-09db361f0780" />
 
-`Complete`
+`Finish`
 
 <img width="499" height="461" alt="image" src="https://github.com/user-attachments/assets/4465f6d4-6e76-4661-9562-2ae81ac24b64" />
+
+Tiến hành restart và cài lại SSMS
+
+<img width="680" height="583" alt="image" src="https://github.com/user-attachments/assets/01317b9a-0db5-48b2-91e1-0d3f828afb34" />
+
+Hoàn tất
+
+<img width="680" height="583" alt="image" src="https://github.com/user-attachments/assets/b9039822-7330-4fd1-b09f-5625c63ef826" />
+
+Mở SSMS
+
+<img width="826" height="434" alt="image" src="https://github.com/user-attachments/assets/a5d623c9-a5b1-4d85-9cb7-fde7a1ae6478" />
+
+Giao diện -> Thiết lập -> Connect
+
+<img width="1790" height="851" alt="image" src="https://github.com/user-attachments/assets/f6c53cb4-68b4-449f-ad45-7e8ce87043e2" />
+
+Thành công
+
+<img width="1790" height="851" alt="image" src="https://github.com/user-attachments/assets/d8f08e2c-7d32-4636-a949-9d321f3689c4" />
 
 
