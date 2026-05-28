@@ -56,6 +56,16 @@ Chọn cả 3 `Domain`, `Private`, `Public` -> `Next`
 
 <img width="705" height="569" alt="image" src="https://github.com/user-attachments/assets/4de80b13-d559-48d2-8a0c-8e3c54d7c7a1" />
 
+Kiểm tra:
+
+kiểm tra port 3389 vì RDP đang sử dụng port 3389 nên sẽ hiện service chạy
+
+<img width="692" height="173" alt="image" src="https://github.com/user-attachments/assets/0e17d869-21f2-4016-9290-a7869b3b60b3" />
+
+```
+nmap -p 3389 14.225.204.109
+```
+
 ---
 
 ### Block port:
@@ -76,11 +86,17 @@ Chọn cả 3 `Domain`, `Private`, `Public` -> `Next`
 
 <img width="712" height="548" alt="image" src="https://github.com/user-attachments/assets/6f1cdfd1-c67a-4c4a-ba20-271a1b3c0b57" />
 
+kiểm tra port 8083 đã block
+
+<img width="692" height="162" alt="image" src="https://github.com/user-attachments/assets/adc853c7-cb2d-4d8f-86d8-1da3e1f83e93" />
+
+```
+nmap -p 8083 14.225.204.109
+```
+
 ---
 
 ## IP
-
----
 
 ### Allow IP:
 
@@ -121,6 +137,20 @@ Chọn cả 3 `Domain`, `Private`, `Public` -> `Next`
 ---
 
 ### Block IP
+
+Tương tự với Allow IP nhưng đến bước `Action` -> Chọn `Block the connections`
+
+<img width="698" height="557" alt="image" src="https://github.com/user-attachments/assets/812d5d2a-f4a4-4e2b-9515-d1853c9f42b2" />
+
+Đặt tên bất kỳ -> `Finish`
+
+<img width="698" height="557" alt="image" src="https://github.com/user-attachments/assets/85e9be3b-974f-40cc-bf3f-2d25058d5e84" />
+
+---
+## Giới hạn IP/Port
+
+### IP
+
 
 
 ---
