@@ -24,7 +24,7 @@ Giao diện sau khi kết nối
 
 <img width="1847" height="1031" alt="image" src="https://github.com/user-attachments/assets/899ac198-940f-491c-83f8-91451b658f56" />
 
-# Port Firewall:
+## Port Firewall:
 
 Nhấn `Window` -> tìm `wf.msc` -> `enter`
 
@@ -33,6 +33,8 @@ Nhấn `Window` -> tìm `wf.msc` -> `enter`
 Giao diện
 
 <img width="1027" height="774" alt="image" src="https://github.com/user-attachments/assets/b1f3b057-96ea-42ce-9c3d-5eb46c7af9fd" />
+
+### Allow port:
 
 Chọn `New rules` bên phải -> `Port` nhập port bất kỳ -> `Next`
 
@@ -49,6 +51,60 @@ Chọn cả 3 `Domain`, `Private`, `Public` -> `Next`
 Đặt tên bất kỳ -> `Finish`
 
 <img width="705" height="569" alt="image" src="https://github.com/user-attachments/assets/4de80b13-d559-48d2-8a0c-8e3c54d7c7a1" />
+
+### Block port:
+
+Chọn `New rules` bên phải -> `Port` nhập port bất kỳ -> `Next`
+
+<img width="705" height="569" alt="image" src="https://github.com/user-attachments/assets/da04e56c-e5d5-4c81-8e4e-2a2f4942d7d7" />
+
+`Block the connection` -> `Next`
+
+<img width="708" height="478" alt="image" src="https://github.com/user-attachments/assets/ab627588-1402-4e1e-869b-e7253dee5903" />
+
+Chọn cả 3 `Domain`, `Private`, `Public` -> `Next`
+
+<img width="705" height="569" alt="image" src="https://github.com/user-attachments/assets/d400dace-60e1-4de8-91d4-5d98a276c692" />
+
+Đặt tên bất kỳ -> `Finish`
+
+<img width="712" height="548" alt="image" src="https://github.com/user-attachments/assets/6f1cdfd1-c67a-4c4a-ba20-271a1b3c0b57" />
+
+### Allow IP:
+
+Chọn `New rules` bên phải -> `Custom` -> `Next`
+
+<img width="698" height="557" alt="image" src="https://github.com/user-attachments/assets/da53eafd-bc87-4dfc-b910-d84c0baed01e" />
+
+`All program` -> `Next`
+
+<img width="698" height="557" alt="image" src="https://github.com/user-attachments/assets/68f5165b-3e58-4948-ac6e-f7b174f8f79b" />
+
+`Protocol and Ports` -> `Next`
+
+<img width="698" height="557" alt="image" src="https://github.com/user-attachments/assets/065ad4d1-820e-4f7f-8fca-cc6fb4aa51be" />
+
+- `Scope` -> có 2 phần `Which local IP addresses does this rule apply to` và `Which remote IP addresses does this rule apply to`
+
+- Giữ nguyên `Which local IP addresses does this rule apply to` và thêm IP ở phần `Which remote IP addresses does this rule apply to`
+
+<img width="698" height="557" alt="image" src="https://github.com/user-attachments/assets/3a3f67ab-1498-4e43-a43f-f1396fbafafe" />
+
+`Add` -> nhập IP muốn thêm -> `Ok` -> `Next`
+
+<img width="698" height="557" alt="image" src="https://github.com/user-attachments/assets/143bc4b9-cf4f-4a67-847e-6c883d505ce7" />
+
+`Allow the connections` -> `Next`
+
+<img width="698" height="557" alt="image" src="https://github.com/user-attachments/assets/8970b12e-6eb8-4ba3-a554-69bb7148dbf9" />
+
+Chọn cả 3 `Domain`, `Private`, `Public` -> `Next`
+
+<img width="698" height="557" alt="image" src="https://github.com/user-attachments/assets/4adfafd6-c17c-419b-aa9a-10596d021dcb" />
+
+Đặt tên bất kỳ -> `Finish`
+
+<img width="698" height="557" alt="image" src="https://github.com/user-attachments/assets/a4b3c261-d116-48ce-8493-79b26ff5ed3e" />
 
 
 ## SQL
