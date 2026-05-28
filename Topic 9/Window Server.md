@@ -327,3 +327,30 @@ extension=openssl
 extension=mbstring
 extension=gd
 `
+
+mở IIS Manager -> `Handler Mappings` -> `Add module mapping` -> Nhập thông tin -> `Yes`
+
+<img width="1373" height="687" alt="image" src="https://github.com/user-attachments/assets/5b267e70-87ba-4876-977b-30f08e92c02a" />
+
+`
+Request path: *.php
+Module: FastCgiModule
+Executable: C:\Users\Administrator\Desktop\php-8.2.31-nts-Win32-vs16-x64\php-cgi.exe
+Name: PHP_via_FastCGI
+`
+
+truy cập `https://dev.mysql.com/downloads/installer/` -> Download
+
+<img width="785" height="595" alt="image" src="https://github.com/user-attachments/assets/146ec993-2fc9-4812-b56e-38f6850c7148" />
+
+<img width="593" height="23" alt="image" src="https://github.com/user-attachments/assets/03cb7191-a614-4e3c-ba97-10b9e727c177" />
+
+cài đặt -> `server only` -> `Next` -> `Execute` -> `Next` -> đến phần `Authentication Method` chọn `Use Legacy Authentication Method`
+
+<img width="787" height="587" alt="image" src="https://github.com/user-attachments/assets/5d53c669-d502-4b93-8bf0-41c8ab3277d8" />
+
+Đến phần `Accounts and Roles` nhập password -> `Next` -> đến `Excute`
+
+<img width="787" height="587" alt="image" src="https://github.com/user-attachments/assets/99c6d56a-33f2-40f6-bad6-30de4628f9a5" />
+
+
