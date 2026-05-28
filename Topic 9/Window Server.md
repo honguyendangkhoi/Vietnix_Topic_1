@@ -392,3 +392,98 @@ Kết quả
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/47f00808-19f7-481c-adea-055c5ce51c1d" />
 
+#### SSL
+
+vào PowerShell -> dùng lệnh `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+Invoke-WebRequest -Uri "https://github.com/win-acme/win-acme/releases/download/v2.2.9.1701/win-acme.v2.2.9.1701.x64.pluggable.zip" -OutFile "C:\win-acme.zip"` để tải xuống -> Sau khi tải xong tiến hành giải nén với lệnh `Expand-Archive -Path "C:\win-acme.zip" -DestinationPath "C:\win-acme"` -> khởi động `cd C:\win-acme .\wacs.exe`
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d7afe8b6-b6b2-433f-a64d-034e430dce57" />
+
+Các mục thiết lập
+
+`
+ A simple Windows ACMEv2 client (WACS)
+ Software version 2.2.9.1701 (release, pluggable, standalone, 64-bit)
+ Connecting to https://acme-v02.api.letsencrypt.org/...
+ Connection OK!
+ Scheduled task not configured yet
+ Please report issues at https://github.com/win-acme/win-acme
+
+ N: Create certificate (default settings)
+ M: Create certificate (full options)
+ R: Run renewals (0 currently due)
+ A: Manage renewals (0 total)
+ O: More options...
+ Q: Quit
+
+ Please choose from the menu: N
+
+ Running in mode: Interactive, Simple
+ No websites with host bindings have been configured in IIS. Add one in the IIS Manager or choose the plugin 'Manual inp
+ut' instead.
+ Source plugin IIS was unable to generate options
+
+ N: Create certificate (default settings)
+ M: Create certificate (full options)
+ R: Run renewals (0 currently due)
+ A: Manage renewals (0 total)
+ O: More options...
+ Q: Quit
+
+ Please choose from the menu: N
+
+ Running in mode: Interactive, Simple
+ No websites with host bindings have been configured in IIS. Add one in the IIS Manager or choose the plugin 'Manual inp
+ut' instead.
+ Source plugin IIS was unable to generate options
+
+ N: Create certificate (default settings)
+ M: Create certificate (full options)
+ R: Run renewals (0 currently due)
+ A: Manage renewals (0 total)
+ O: More options...
+ Q: Quit
+
+ Please choose from the menu: N
+
+ Running in mode: Interactive, Simple
+
+ Please select which website(s) should be scanned for host names. You may
+ input one or more site identifiers (comma-separated) to filter by those
+ sites, or alternatively leave the input empty to scan *all* websites.
+
+ 1: Default Web Site (1 binding)
+
+ Site identifier(s) or <Enter> to choose all: <Enter>
+
+ 1: wp.dangkhoi.vietnix.tech (Site 1)
+
+ Listed above are the bindings found on the selected site(s). By default all
+ of them will be included, but you may either pick specific ones by typing the
+ host names or identifiers (comma-separated) or filter them using one of the
+ options from the menu.
+
+ P: Pick bindings based on a search pattern
+ A: Pick *all* bindings
+
+ Binding identifiers(s) or menu option: a
+
+ 1: wp.dangkhoi.vietnix.tech (Site 1)
+
+ Continue with this selection? (y*/n) - yes
+
+ Source generated using plugin IIS: wp.dangkhoi.vietnix.tech
+
+Terms of service:    C:\ProgramData\win-acme\acme-v02.api.letsencrypt.org\LE-SA-v1.6-August-18-2025.pdf
+
+ Open in default application? (y/n*) - no
+
+ Do you agree with the terms? (y*/n) - yes
+
+ Enter email(s) for notifications about problems and abuse (comma-separated): <Enter>
+ `
+ 
+Cài đặt thành công
+
+<img width="573" height="290" alt="image" src="https://github.com/user-attachments/assets/511a8f4f-fb51-4f3c-83ce-a2bdca657eb7" />
+
