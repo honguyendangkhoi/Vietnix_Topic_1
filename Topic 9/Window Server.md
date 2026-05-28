@@ -313,3 +313,17 @@ Tiến hành giải nén
 
 <img width="1790" height="851" alt="image" src="https://github.com/user-attachments/assets/caf290d9-39a3-470b-b335-471474e29a50" />
 
+Tìm file `php.ini-configuration` đổi tên thành `php.ini`
+
+<img width="600" height="23" alt="image" src="https://github.com/user-attachments/assets/9bb4f07e-d86e-4073-b75f-cc04be84a827" />
+
+mở file `php.ini` bằng notepad -> Tìm và bỏ dấu `;` ở các dòng sau
+
+<img width="547" height="454" alt="image" src="https://github.com/user-attachments/assets/1cebd04d-54a5-4a16-a8f2-2e60001bb696" />
+
+`
+extension=mysqli
+extension=openssl
+extension=mbstring
+extension=gd
+`
