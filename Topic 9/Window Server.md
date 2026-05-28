@@ -193,12 +193,21 @@ Block tất cả chỉ Allow riêng IP chỉ định
 
 ---
 
-## SQL
+## IIS
 
-Giải nén file ISO
+Mở `Server Manager` → `Add roles and features`
 
-<img width="620" height="301" alt="image" src="https://github.com/user-attachments/assets/01c0816e-8b05-43bf-91bf-6a7ecc39454c" />
+<img width="788" height="552" alt="image" src="https://github.com/user-attachments/assets/75bd2bee-f7aa-428e-99bb-f016a18311c5" />
 
-Upload file ISO
+`Next` liên tục đến bước `Server Roles`
 
-<img width="724" height="92" alt="image" src="https://github.com/user-attachments/assets/bd8c58d0-139e-45df-882d-181c34ef9464" />
+<img width="1153" height="869" alt="image" src="https://github.com/user-attachments/assets/0395c8d2-ac07-4de3-b0f6-6ee121c5ca35" />
+
+Chọn `Web Server (IIS)` → chọn `Roles`
+
+<img width="788" height="552" alt="image" src="https://github.com/user-attachments/assets/d5664306-4f26-46ee-8013-2968f1919146" />
+
+`Next` -> `Next` → `Install` → chờ cài xong
+
+<img width="1791" height="910" alt="image" src="https://github.com/user-attachments/assets/0777eb34-a8ff-40f2-bd2a-ac4e10b77c94" />
+
