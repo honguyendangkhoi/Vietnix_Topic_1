@@ -300,6 +300,7 @@ Thành công
 <img width="1790" height="851" alt="image" src="https://github.com/user-attachments/assets/d8f08e2c-7d32-4636-a949-9d321f3689c4" />
 
 ### Wordpress
+#### PHP
 
 tiến hành cài đặt PHP -> truy cập `https://windows.php.net/download/` 
 
@@ -339,6 +340,8 @@ Executable: C:\Users\Administrator\Desktop\php-8.2.31-nts-Win32-vs16-x64\php-cgi
 Name: PHP_via_FastCGI
 `
 
+#### MySQL
+
 truy cập `https://dev.mysql.com/downloads/installer/` -> Download
 
 <img width="785" height="595" alt="image" src="https://github.com/user-attachments/assets/146ec993-2fc9-4812-b56e-38f6850c7148" />
@@ -349,8 +352,43 @@ cài đặt -> `server only` -> `Next` -> `Execute` -> `Next` -> đến phần `
 
 <img width="787" height="587" alt="image" src="https://github.com/user-attachments/assets/5d53c669-d502-4b93-8bf0-41c8ab3277d8" />
 
-Đến phần `Accounts and Roles` nhập password -> `Next` -> đến `Excute`
+Đến phần `Accounts and Roles` nhập password -> `Next` -> đến `Excute` -> `Finish`
 
 <img width="787" height="587" alt="image" src="https://github.com/user-attachments/assets/99c6d56a-33f2-40f6-bad6-30de4628f9a5" />
 
+<img width="787" height="587" alt="image" src="https://github.com/user-attachments/assets/7718e86e-281d-471d-a4e6-9faa6a8225bd" />
+
+#### Wordpress
+
+truy cập `https://wordpress.org/latest.zip` -> download 
+
+<img width="706" height="172" alt="image" src="https://github.com/user-attachments/assets/e8be8ef5-383f-4e66-a800-bf266d96f974" />
+
+Giải nén -> copy toàn bộ trong folder wordpress -> paste vào `C:\inetpub\wwwroot\` (Vì C:\inetpub\wwwroot\ là thư mục gốc mặc định của IIS Webserver. Khi ai truy cập vào http://14.225.204.109, IIS sẽ đọc file từ thư mục đó để hiển thị website)
+
+<img width="706" height="172" alt="image" src="https://github.com/user-attachments/assets/c50c33f0-06ef-4424-a4db-6255bf0e116a" />
+
+<img width="663" height="512" alt="image" src="https://github.com/user-attachments/assets/0c75f443-6c45-4add-bf15-f3047b4920ee" />
+
+<img width="663" height="512" alt="image" src="https://github.com/user-attachments/assets/893b1a58-db10-4d20-a56c-dc6ad96d1993" />
+
+Tạo database
+
+<img width="625" height="400" alt="image" src="https://github.com/user-attachments/assets/a4bf0911-a18c-4289-ba22-5dd1d2cf685f" />
+
+Truy cập `http://localhost/wp-admin/setup-config.php`
+
+<img width="937" height="644" alt="image" src="https://github.com/user-attachments/assets/9abbc1c0-5ac4-4e47-861b-3d73e2ff583b" />
+
+Cài đặt thông tin
+
+<img width="946" height="760" alt="image" src="https://github.com/user-attachments/assets/f0fbe412-1d7f-4ed9-be06-ce93612b2d02" />
+
+<img width="916" height="885" alt="image" src="https://github.com/user-attachments/assets/6aea4b0c-fca5-478e-a212-309cd05949a5" />
+
+Kết quả
+
+<img width="916" height="885" alt="image" src="https://github.com/user-attachments/assets/24ac86e5-af8f-4d89-b05f-2892a1e3d624" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/47f00808-19f7-481c-adea-055c5ce51c1d" />
 
