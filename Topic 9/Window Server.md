@@ -209,5 +209,74 @@ Chọn `Web Server (IIS)` → chọn `Roles`
 
 `Next` -> `Next` → `Install` → chờ cài xong
 
-<img width="1791" height="910" alt="image" src="https://github.com/user-attachments/assets/0777eb34-a8ff-40f2-bd2a-ac4e10b77c94" />
+<img width="1791" height="938" alt="image" src="https://github.com/user-attachments/assets/f7802488-4ddc-4397-ac0d-c5f3219ceded" />
+
+Kiểm tra kết quả:
+
+Mở Internet Explorer hoặc Edge trên VPS, truy cập `http://localhost`:
+
+<img width="1791" height="938" alt="image" src="https://github.com/user-attachments/assets/67e338e7-6323-4602-b159-40b34cfa1397" />
+
+## SQL
+
+truy cập đường link `https://software.vietnix.tech/datastore/sources/SQL_Server/sql2016/`
+
+<img width="1791" height="938" alt="image" src="https://github.com/user-attachments/assets/897e5381-b716-4c6c-a6ea-f0e849108f89" />
+
+Download
+
+<img width="971" height="84" alt="image" src="https://github.com/user-attachments/assets/5fdcdf0c-da31-4852-9b45-ae388883f756" />
+
+<img width="1131" height="242" alt="image" src="https://github.com/user-attachments/assets/f8b2aa08-0576-459d-a501-abc442127bae" />
+
+Cài đặt
+
+Mở file ISO vừa tải -> Chuột phải vào file ISO → `Mount`
+
+<img width="1131" height="398" alt="image" src="https://github.com/user-attachments/assets/e6754cfa-69b6-4b91-a1c6-39de7610c3b8" />
+
+Vào ổ đĩa vừa mount → chọn `setup.exe`
+
+<img width="1131" height="398" alt="image" src="https://github.com/user-attachments/assets/01fb5f16-7376-4369-ae77-a3e293db5c0d" />
+
+Chọn `Installation` -> `New SQL Server stand-alone installation or add features to an existing installation`
+
+Nhập key -> `Next`
+
+<img width="783" height="594" alt="image" src="https://github.com/user-attachments/assets/856031cc-3123-431d-9d1b-51f07eb0f538" />
+
+chọn `I accept the license terms` -> `Next` 
+
+<img width="783" height="594" alt="image" src="https://github.com/user-attachments/assets/eb0cc146-c3a7-4bed-8e2e-82e54856f4a5" />
+
+đến phần `Feature Selection` -> chọn các `Feature` -> `Next
+
+<img width="625" height="497" alt="image" src="https://github.com/user-attachments/assets/65ab7106-f919-4877-9e58-65549242c5ad" />
+
+đến phần `Database Engine Configuration` -> `Mixed Mode (SQL Server authentication and Windows authentication)` -> `Add Current User` -> `Next`
+
+<img width="1605" height="778" alt="image" src="https://github.com/user-attachments/assets/af6dc845-7ca7-49f9-9902-4ecdc0a26c66" />
+
+`Install`
+
+<img width="1777" height="802" alt="image" src="https://github.com/user-attachments/assets/da1725dd-2cda-436e-bf8a-a6896503a0a7" />
+
+`Complete`
+
+<img width="1777" height="802" alt="image" src="https://github.com/user-attachments/assets/7736cee8-7719-4348-a1c6-990699440678" />
+
+cài đặt SQL Server Management Studio (SSMS) để quản lý SQL Server và .NET Framework 4.7.2
+
+vào Internet Explorer -> truy cập `https://aka.ms/ssmsfullsetup` và `https://go.microsoft.com/fwlink/?LinkId=863262`  -> Download 
+
+<img width="595" height="51" alt="image" src="https://github.com/user-attachments/assets/3b9e8ae4-375d-4c06-a967-990d680c8537" />
+
+Tiến hàng cài đặt .NET Framework 4.7.2 trước
+
+<img width="499" height="461" alt="image" src="https://github.com/user-attachments/assets/1f043ede-5c29-4a67-a9a7-09db361f0780" />
+
+`Complete`
+
+<img width="499" height="461" alt="image" src="https://github.com/user-attachments/assets/4465f6d4-6e76-4661-9562-2ae81ac24b64" />
+
 
