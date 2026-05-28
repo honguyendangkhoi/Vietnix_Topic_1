@@ -299,4 +299,17 @@ Thành công
 
 <img width="1790" height="851" alt="image" src="https://github.com/user-attachments/assets/d8f08e2c-7d32-4636-a949-9d321f3689c4" />
 
+### Wordpress
+
+tiến hành cài đặt PHP -> truy cập `https://windows.php.net/download/` 
+
+<img width="1790" height="851" alt="image" src="https://github.com/user-attachments/assets/9848c362-8b5f-4669-94fb-993ac1eef2a2" />
+
+chọn bản PHP phù hợp -> download
+
+<img width="1790" height="851" alt="image" src="https://github.com/user-attachments/assets/c1120b9e-b26d-46f1-b7d0-dcf411c6ec05" />
+
+Tiến hành giải nén
+
+<img width="1790" height="851" alt="image" src="https://github.com/user-attachments/assets/caf290d9-39a3-470b-b335-471474e29a50" />
 
