@@ -151,7 +151,45 @@ Tương tự với Allow IP nhưng đến bước `Action` -> Chọn `Block the 
 
 ### IP
 
+Block tất cả chỉ Allow riêng IP chỉ định
 
+- Tạo rule Block all cho port 80
+
+  wf.msc -> Inbound Rules -> New Rule
+
+<img width="704" height="561" alt="image" src="https://github.com/user-attachments/assets/1e42ec80-198e-4846-8b27-209af31aec24" />
+
+
+  Chọn Port -> TCP -> nhập 80 -> Next
+
+<img width="704" height="561" alt="image" src="https://github.com/user-attachments/assets/855b241c-937c-4daa-bd4e-48ba3e00441a" />
+
+
+  Chọn Block the connection -> Next -> Next -> Finish
+
+<img width="704" height="561" alt="image" src="https://github.com/user-attachments/assets/8720f436-f24a-4144-933d-fa4664a8a4fc" />
+
+<img width="504" height="88" alt="image" src="https://github.com/user-attachments/assets/4f2a8830-f800-4c7d-a29d-bf75f4825075" />
+
+- Tạo rule Allow riêng IP vào port 80
+  New Rule → Custom → Next → Next
+
+<img width="715" height="566" alt="image" src="https://github.com/user-attachments/assets/8e2d3cc0-8e58-4faa-8f8b-37f00f987933" />
+
+  Protocol: TCP, Local port: Specific → 80 → Next
+
+<img width="715" height="566" alt="image" src="https://github.com/user-attachments/assets/e49b674a-cfb1-4402-a4c8-140270bd9beb" />
+
+
+  Scope → Remote IP → These IP addresses → Add IP → Next
+
+<img width="715" height="566" alt="image" src="https://github.com/user-attachments/assets/eba1eab4-80ec-4795-a6e0-3c0222ab451b" />
+
+  Allow the connection → Next → Next -> Finish
+
+<img width="715" height="566" alt="image" src="https://github.com/user-attachments/assets/f59c9067-63a6-4e10-ac8b-6958c91593aa" />
+
+**Note: Rule Allow phải có Priority cao hơn rule Block. Trong Windows FW, rule Allow luôn thắng rule Block cùng cấp.
 
 ---
 
